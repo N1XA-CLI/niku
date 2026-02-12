@@ -1,0 +1,33 @@
+[simulation]
+heads = 3                           # Number of heads on initialization
+rule = "RL"                         # Rules for the simulation
+speed_ms = 20                       # Simulation speed in milliseconds
+trail_length = 24                   # Number of trail characters following the head
+color_cells = true                  # If true, leaves behind an infinite trail of colored cell chars
+seed = ""                           # Seed stores initial position and direction of the heads. Empty = random
+
+[display]
+colors = [                          # Array of colors mapped to number of heads sequentially, using hex, RGB or 256-colors.
+    "#d8dee9",            # If there are more heads than colors, remaining colors are generated.
+    "#5e81ac",
+    "#81a1c1",
+]
+fade_trail_color = ""               # Creates gradient trail from head color to this. Set to terminal bg color to fade out. Empty = no gradient
+state_based_colors = false          # Printed cells use color config per state
+live_colors = false                 # Heads change color with state, only works with state_based_colors = true
+head_char = ["██"]                  # Array of head characters, cycles through it sequentially per step
+trail_char = ["▓▓"]                 # Array of trail characters, where first character is mapped to first trail, and so on
+cell_char = "░░"                    # The characters left behind the trail when color_cells = true
+randomize_heads = false             # Randomize head character in head_char array
+randomize_trails = false            # Randomize trail characters in trail_char array
+
+[controls]
+quit = "q"                          # Quit
+toggle = " "                        # Pause/resume simulation
+reset = "r"                         # Reset simulation
+faster = "+"                        # Increase simulation speed
+slower = "-"                        # Decrease simulation speed
+config_reload = "c"                 # Hot reload config
+help = "h"                          # Toggle help overlay
+statusbar = "b"                     # Toggle statusbar overlay
+seed_toggle = "s"                   # Toggle seed

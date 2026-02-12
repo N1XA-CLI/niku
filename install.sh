@@ -4,7 +4,7 @@ set -e
 AUR_HELPER="yay"
 PACKAGES=(rsync fastfetch kitty niri neovim obs-studio superfile waybar tofi trmt swww unzip curl)
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
-SOURCE_DIR="$SCRIPT_DIR/.config/"
+SOURCE_DIR="$SCRIPT_DIR/config/"
 DEST_DIR="$HOME/.config/"
 
 THEME_ZIP_URL="https://files.catbox.moe/ovuykg.zip"
@@ -42,8 +42,8 @@ else
 fi
 
 
-# echo "Syncing dotfiles..."
-# rsync -av "$SOURCE_DIR" "$DEST_DIR"
+echo "Syncing dotfiles..."
+rsync -av "$SOURCE_DIR" "$DEST_DIR"
 
 echo "Installing Nordic GTK theme and Nordzy icons..."
 mkdir -p "$(dirname "$THEME_DEST")" "$(dirname "$ICON_DEST")"

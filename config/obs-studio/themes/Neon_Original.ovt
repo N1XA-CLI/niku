@@ -1,0 +1,7 @@
+@OBSThemeMeta {
+    name: 'Blue';
+    id: 'com.obsproject.Neon.Original';
+    extends: 'com.obsproject.Neon';
+    author: 'Monsteer';
+    dark: 'true';
+}
