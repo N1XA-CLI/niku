@@ -1,0 +1,34 @@
+@import url('~/.themes/gtk/scss/gtk-3.0/_colors.scss');
+.navigation-sidebar {
+	background-color: @sidebar_bg_color;
+	color: @window_fg_color;
+}
+
+
+headerbar.default-decoration {
+  /* You may need to tweak these values depending on your GTK theme */
+  margin-bottom: 50px;
+  margin-top: -100px;
+}
+
+/* rm -rf window shadows */
+window.csd,             /* gtk4? */
+window.csd decoration { /* gtk3 */
+  box-shadow: none;
+}
+.placessidebar {
+    background-color: blue;
+    backdrop-filter: blur(100px);
+  }
+.navigation-sidebar {
+    background-color: transparent;
+    backdrop-filter: blur(100px);
+}
+.top-bar {
+    background-color: alpha(@color0,0.1);
+    backdrop-filter: blur(100px);
+}  
+.sidebar-pane {
+    background: transparent;
+    backdrop-filter: blur(100px);
+}

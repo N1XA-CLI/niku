@@ -1,0 +1,44 @@
+$surface-strongest: rgb({{background | rgb}});
+$surface-strong: rgb({{background | rgb}});
+$surface-moderate: rgb({{color14 | rgb}});
+$surface-weak: rgb({{background | rgb}});
+$surface-weakest: rgb({{background | rgb}});
+
+$white-strongest: rgb({{color6 | rgb}});
+$white-strong: rgba({{color14 | rgb}}, 0.87);
+$white-moderate: rgba({{color14 | rgb}}, 0.34);
+$white-weak: rgba({{color14 | rgb}}, 0.14);
+$white-weakest: rgba({{color14 | rgb}}, 0.06);
+
+$black-strongest: rgb({{color1 | rgb}});
+$black-strong: rgba({{color1 | rgb}}, 0.87);
+$black-moderate: rgba({{color11 | rgb}}, 0.42);
+$black-weak: rgba({{color1 | rgb}}, 0.15);
+$black-weakest: rgba({{color14 | rgb}}, 0.06);
+
+$red-normal: rgb({{color11 | rgb}});
+$red-light: rgb({{color10 | rgb}});
+$orange-normal: rgba({{background | rgb}}, 0.8);
+$orange-light: rgb({{background | rgb}});
+$yellow-normal: rgb({{background | rgb}});
+$yellow-light: rgb({{background | rgb}});
+$green-normal: rgb({{color14 | rgb}});
+$green-light: rgb(97, 214, 126);
+$cyan-normal: rgb({{color14 | rgb}});
+$cyan-light: rgb({{color14 | rgb}});
+$blue-normal: rgb({{background | rgb}});
+$blue-light: rgb({{background | rgb}});
+$purple-normal: rgb({{color14 | rgb}});
+$purple-light: rgb({{color15 | rgb}});
+$pink-normal: rgb({{color13 | rgb}});
+$pink-light: rgb({{color7 | rgb}});
+$pink-custom: rgb({{color2 | rgb}});
+$pink: rgb({{color4 | rgb}});
+$red: rgb({{color12 | rgb}});
+$red-custom: rgb({{color5 | rgb}});
+
+$accent-primary: $purple-normal;
+$accent-secondary: $green-normal;
+
+// TODO: is there a better way to do this? this is for example used in gnome-calculator for the result top-border
+@define-color borders #{"" +$surface-strong};

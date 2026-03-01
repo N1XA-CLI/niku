@@ -1,0 +1,17 @@
+@define-color accent_color #ECE8E6;
+@define-color accent_fg_color #675F59;
+@define-color accent_bg_color #596167;
+@define-color window_bg_color #242221;
+@define-color window_fg_color #ECE8E6;
+@define-color headerbar_bg_color #7C7A76;
+@define-color headerbar_fg_color #968F8A;
+@define-color popover_bg_color #DBD6D3;
+@define-color popover_fg_color #999694;
+@define-color view_bg_color #897E77;
+@define-color view_fg_color #778289;
+@define-color card_bg_color #9DA0A6;
+@define-color card_fg_color #A6A39D;
+@define-color sidebar_bg_color #242221;
+@define-color sidebar_fg_color #ECE8E6;
+@define-color sidebar_border_color #606060;
+@define-color sidebar_backdrop_color #5E6E78;

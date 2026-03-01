@@ -1,14 +1,10 @@
-@import url("./wallust/waybar.css");
-
 * {
   font-size: 14px;
 	font-family: "JetBrainsMono Nerd Font Mono";
 }
-
 window#waybar {
     border-bottom: 1px solid #181825;
     border-radius: 10px;
-    background-color: @color10; /* or blend2 */
 }
 
 #mpris,
@@ -25,31 +21,26 @@ window#waybar {
   margin-top: 0px;
   margin-bottom: 0px;
   margin-right: 14px;
-  color: @foreground; 
 }
 
 #workspaces {
-  margin-left: 5px; 
+  margin-left: 5px;
 }
 
 #workspaces button {
   padding: 0 5px;
   margin-right: 1px;
-  margin: 2px;
+	margin: 2px;
   border-radius: 4px;
-  color: @foreground;
 }
 
 #workspaces button:hover {
-  background-color: @color14;
-  color: @blend;
-
-  
+  background-color: rgba(50, 50, 50, 0.5);
+  color: #ffffff;
 }
 
 #workspaces button.active {
-  background: @color11;
-  color: @blend;
+  background: #5e81ac;
 }
 
 #workspaces button.urgent {
@@ -65,17 +56,30 @@ window#waybar {
   padding: 0px 4px;
 }
 
-#mpris{
+#backlight {
+  color: #8fbcbb;
+}
 
+#mpris{
+	color: #8fbcbb;
 	font-size: 18px;
   margin-right: 1px;
 }
 
-#custom-d {
-  color: @color5;  
-  padding: 0 7px;
-  margin: 2px 0px;
+#pulseaudio {
+  color: #88c0d0;
 }
+
+#battery {
+  color: #81a1c1;
+}
+
+#custom-d {
+    color: #4c566a;
+    padding: 0 7px;
+    margin: 2px 0px;
+}
+
 
 .modules-left,
 .modules-right,

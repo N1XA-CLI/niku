@@ -1,0 +1,14 @@
+/* Main Config 1080p */
+
+@import "~/.config/rofi/master-config.rasi" 
+
+/* ---- Configuration ---- */
+configuration {
+	/*font: "JetBrainsMono Nerd Font Mono Bold 10"; */
+  font: "JetBrainsMono Nerd Font 11";
+}
+
+element-text {
+   /* font:	"JetBrainsMono Nerd Mono 12"; */
+   font: "JetBrainsMono Nerd Font 10.5";
+}
