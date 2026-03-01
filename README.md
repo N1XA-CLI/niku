@@ -68,6 +68,5 @@ chmod +x install.sh
 | Kitty              | [Website](https://sw.kovidgoyal.net/kitty/)                                                                  |
 | OBS Studio         | [Website](https://obsproject.com/)                                                                           |
 | Fastfetch          | [GitHub](https://github.com/fastfetch-cli/fastfetch)                                                         |
-| Startpage          | [Firefox Add-on](https://addons.mozilla.org/en-US/firefox/addon/nord-inspired-startpage/)                    |
 | Wallpapers         | [Local Folder](./.config/walls)                                                                              |
 
