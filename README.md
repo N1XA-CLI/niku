@@ -72,4 +72,4 @@ chmod +x install.sh
 | Wallpapers         | [GitHub](https://github.com/N1XA-CLI/walls)                                                                  |
 | Wallust            | [Codeberg](https://codeberg.org/explosion-mental/wallust)                                                    |
 | Cava               | [Cava](https://github.com/karlstav/cava)                                                    |
-             | 
+
