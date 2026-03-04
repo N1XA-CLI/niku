@@ -2,7 +2,7 @@
 set -e
 
 AUR_HELPER="yay"
-PACKAGES=(rsync fastfetch kitty niri neovim obs-studio superfile waybar rofi swww unzip curl wallust-git btop cava nwg-look dunst adw-gtk-theme)
+PACKAGES=(rsync fastfetch kitty niri neovim obs-studio yazi waybar rofi swww unzip curl matugen btop cava nwg-look swaync adw-gtk-theme rmpc-git mpd)
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 SOURCE_DIR="$SCRIPT_DIR/config/"
 DEST_DIR="$HOME/.config/"
@@ -30,9 +30,9 @@ echo "Syncing dotfiles..."
 rsync -av "$SOURCE_DIR" "$DEST_DIR"
 
 # Left this part
-#echo "Applying GTK and icon themes..."
-3gsettings set org.gnome.desktop.interface gtk-theme "adw-gtk-theme"
-#gsettings set org.gnome.desktop.interface icon-theme "" || true
+echo "Applying GTK and icon themes..."
+gsettings set org.gnome.desktop.interface gtk-theme "adw-gtk-theme"
+gsettings set org.gnome.desktop.interface icon-theme "" || true
 
 
 echo "Base ricing done."
