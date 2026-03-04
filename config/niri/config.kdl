@@ -112,7 +112,7 @@ window-rule {
 // Open the Brave picture-in-picture player as floating by default.
 window-rule {
     match app-id=r#"brave$"# title="^Picture-in-Picture$"
-
+    match app-id="floatingterm"
     open-floating true
 }
 window-rule {
@@ -187,9 +187,12 @@ spawn-at-startup     "wl-paste --type image --watch cliphist store"
 spawn-at-startup     "wl-paste --type text --watch cliphist store"
 spawn-at-startup     "wlsunset"
 spawn-at-startup     "swww-daemon"
-// spawn-at-startup     "waybar"
+spawn-at-startup     "waybar"
 spawn-at-startup     "dunst"
 spawn-sh-at-startup  "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &"
+spawn-at-startup     "swaync"
+spawn-at-startup     "playerctld"
+spawn-at-startup     "swayosd-server"
 
 
 // // // // // // // // // // //
@@ -199,28 +202,33 @@ spawn-sh-at-startup  "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+RETURN                          hotkey-overlay-title="Open a Terminal: kitty"       { spawn-sh "kitty"; }
-    Ctrl+Escape 			hotkey-overlay-title="Kill or Start: Waybar"        { spawn-sh "~/.config/waybar/scripts/toggle_waybar.sh"; }
-    Mod+Escape 				hotkey-overlay-title="Toggle Powermenu"               { spawn-sh "pkill rofi || ~/.config/rofi/powermenu/powermenu.sh"; }
-    Mod+A                               hotkey-overlay-title="Toggle an Application: tofi"  { spawn-sh "pkill rofi || ~/.config/rofi/launcher/launcher.sh"; }
-    Mod+E                               hotkey-overlay-title="Open Terminal File Manager"   { spawn-sh "kitty spf"; }
-    Alt+L 			        hotkey-overlay-title="Lock Screen: gtklock"         { spawn-sh "gtklock"; }
-    Mod+Q 				repeat=false                                        { close-window; }
+    Ctrl+Escape 			                  hotkey-overlay-title="Kill or Start: Waybar"        { spawn-sh "~/.config/waybar/scripts/toggle_waybar.sh"; }
+    Mod+Escape 				                  hotkey-overlay-title="Toggle Powermenu"             { spawn-sh "pkill wlogout || ~/.config/niri/scripts/Wlogout.sh"; }
+    Mod+A                               hotkey-overlay-title="Toggle an Application: tofi"  { spawn-sh "pkill rofi || rofi -show drun"; }
+    Mod+E                               hotkey-overlay-title="Open floating terminal File Manager"   { spawn-sh "kitty --app-id=floatingterm yazi"; }
+    Alt+L 			                        hotkey-overlay-title="Lock Screen: gtklock"         { spawn-sh "gtklock"; }
+    Mod+Q 				                      repeat=false                                        { close-window; }
+    Mod+B                               hotkey-overlay-title="Open Brave Browser"           { spawn-sh "brave"; }
+    Mod+C                               hotkey-overlay-title="Open nvim in terminal"        { spawn-sh "kitty nvim"; } 
+    Mod+N                               hotkey-overlay-title="Toggle notification center"   { spawn-sh "swaync-client -t -sw"; }
+    Mod+M                               hotkey-overlay-title="Open floating music player"   { spawn-sh "kitty --app-id=floatingterm rmpc"; }
+    Mod+grave                           hotkey-overlay-title="Open cheatsheet"              { spawn-sh "pkill rofi || ~/.config/rofi/scripts/key.sh"; }
     Mod+Shift+N                         hotkey-overlay-title="Toggle Night Mode"            { spawn-sh "killall wlsunset || wlsunset -t 4000 -g 0.8"; }
-    Mod+Shift+W                         hotkey-overlay-title="Change Wallpaper"      { spawn-sh "pkill rofi || $HOME/.config/niri/scripts/wallpaper.sh"; }
-    
+    Mod+Shift+W                         hotkey-overlay-title="Change Wallpaper"             { spawn-sh "pkill rofi || $HOME/.config/niri/scripts/wall_selector.sh"; }
+    Mod+Shift+T                       hotkey-overlay-title="Open floating Terminal"       { spawn-sh "kitty --app-id=floatingterm"; }
+
     XF86AudioRaiseVolume                allow-when-locked=true                              { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
     XF86AudioLowerVolume                allow-when-locked=true                              { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
     XF86AudioMute                       allow-when-locked=true                              { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute                    allow-when-locked=true                              { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
     XF86MonBrightnessUp                 allow-when-locked=true                              { spawn-sh "brightnessctl --device=intel_backlight set +5%" ; }
     XF86MonBrightnessDown               allow-when-locked=true                              { spawn-sh "brightnessctl --device=intel_backlight set 5%-" ; }
-    XF86HomePage 					                                                        { spawn-sh "brave"; }
+    XF86HomePage 					                                                                  { spawn-sh "brave"; }
     // xf86Calculator 					                                                    { spawn-sh ""; } // Set the calculator you use
     XF86AudioMedia 				                                                            { spawn-sh "gtk4-launch spotify-adblock"; }
     
     Mod+O 				repeat=false                                        { toggle-overview; }    
-    Mod+Tab                             repeat=false                                        { toggle-overview; }
-
+ 
     Mod+Left  						                                    { focus-column-left; }
     Mod+Down  						                                    { focus-window-down; }
     Mod+Up                                                                                  { focus-window-up; }
@@ -352,6 +360,36 @@ binds {
     // which ensures niri always processes them, even when an inhibitor is active.
     Alt+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     // The quit action will show a confirmation dialog to avoid accidental exits.
-    Ctrl+Alt+Delete { quit; }
+    Mod+Alt+Delete { quit; }
     Mod+Shift+P { power-off-monitors; }
+}
+recent-windows {
+    // off
+    debounce-ms 750
+
+    open-delay-ms 150
+
+    highlight {
+        active-color "#999999ff"
+        urgent-color "#ff9999ff"
+        padding 30
+        corner-radius 0
+    }
+
+    previews {
+        max-height 480
+        max-scale 0.5
+    }
+
+    binds {
+        //Alt+Tab         { next-window; }
+        //Alt+Shift+Tab   { previous-window; }
+        //Alt+grave       { next-window     filter="app-id"; }
+        //Alt+Shift+grave { previous-window filter="app-id"; }
+
+        Mod+Tab         { next-window; }
+        Mod+Shift+Tab   { previous-window; }
+        //Mod+grave       { next-window     filter="app-id"; }
+        //Mod+Shift+grave { previous-window filter="app-id"; }
+    }
 }

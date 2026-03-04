@@ -1,4 +1,4 @@
-@import url("./wallust/waybar.css");
+@import url("./colors/colors.css");
 
 * {
   font-size: 14px;
@@ -8,7 +8,7 @@
 window#waybar {
     border-bottom: 1px solid #181825;
     border-radius: 10px;
-    background-color: @color10; /* or blend2 */
+    background-color: @inverse_primary;
 }
 
 #mpris,
@@ -25,7 +25,7 @@ window#waybar {
   margin-top: 0px;
   margin-bottom: 0px;
   margin-right: 14px;
-  color: @foreground; 
+  color: @on_secondary_container; 
 }
 
 #workspaces {
@@ -37,19 +37,19 @@ window#waybar {
   margin-right: 1px;
   margin: 2px;
   border-radius: 4px;
-  color: @foreground;
+  color: @on_secondary_container;
 }
 
 #workspaces button:hover {
-  background-color: @color14;
-  color: @blend;
+  background-color: @primary;
+  color: @on_tertiary_fixed;
 
   
 }
 
 #workspaces button.active {
-  background: @color11;
-  color: @blend;
+  background: @on_primary;
+  color: @on_surface;
 }
 
 #workspaces button.urgent {

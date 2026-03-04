@@ -1,0 +1,193 @@
+/* ---- Import Matugen colors (DO NOT EDIT) ---- */
+@import "~/.config/rofi/colors.rasi"
+
+/* ---- Configuration ---- */
+configuration {
+    modi:                    "drun,window";
+    show-icons:              true;
+    display-drun:            " apps";
+    display-run:             " term";
+    display-filebrowser:     " files";
+    display-window:          " window";
+    drun-display-format:     "{name}";
+    hover-select:            true;
+    font:                    "Google Sans Flex Regular 11";
+    me-select-entry:         "MouseSecondary";
+    me-accept-entry:         "MousePrimary";
+    window-format:           "{w} · {c} · {t}";
+    icon-theme: "Colloid";
+}
+
+/* ---- Window ---- */
+window {
+    enabled:                 true;
+    fullscreen:              false;
+    transparency:            "real";
+    cursor:                  "default";
+    spacing:                 0px;
+    border:                  2px;
+    border-radius:           20px;
+    location:                center;
+    anchor:                  center;
+    width:                   40%;
+    background-color:        @surface;
+    border-color:            @outline;
+}
+
+/* ---- Main Box ---- */
+mainbox {
+    enabled:                 true;
+    orientation:             vertical;
+    children:                [ "inputbar", "listbox" ];
+    background-color:        transparent;
+}
+
+/* ---- Inputbar ---- */
+inputbar {
+    enabled:                 true;
+    padding:                 8px;
+    margin:                  10px;
+    background-color:        transparent;
+    border-radius:           0px;
+    orientation:             horizontal;
+    children:                [ "entry" ];
+}
+
+/* ---- Entry ---- */
+entry {
+    enabled:                 true;
+    expand:                  true;
+    width:                   100%;
+    padding:                 8px;
+    border-radius:           0px;
+    background-color:        transparent;
+    text-color:              @on-surface;
+    cursor:                  text;
+    placeholder:             "Search";
+    placeholder-color:       @on-surface-variant;
+}
+
+/* ---- Listbox ---- */
+listbox {
+    spacing:                 0px;
+    padding:                 0px 10px 10px 10px;
+    background-color:        transparent;
+    orientation:             vertical;
+    children:                [ "message", "listview" ];
+}
+
+/* ---- Listview ---- */
+listview {
+    enabled:                 true;
+    columns:                 1;
+    lines:                   7;
+    cycle:                   true;
+    dynamic:                 true;
+    scrollbar:               false;
+    layout:                  vertical;
+    fixed-height:            true;
+    fixed-columns:           true;
+    spacing:                 0px;
+    padding:                 0px;
+    background-color:        transparent;
+    border:                  0px;
+}
+
+/* ---- Scrollbar ---- */
+scrollbar {
+    border:                  0px;
+    background-color:        transparent;
+    handle-color:            @primary;
+    handle-width:            2px;
+}
+
+/* ---- Elements ---- */
+element {
+    enabled:                 true;
+    spacing:                 8px;
+    padding:                 8px;
+    border-radius:           0px;
+    background-color:        transparent;
+    cursor:                  pointer;
+    border-radius:			 10px;
+}
+
+/* Normal */
+element normal.normal {
+    background-color:        transparent;
+    text-color:              @on-surface;
+}
+
+/* Hover */
+element normal.active {
+    background-color:        @primary;
+    text-color:              @on-primary;
+}
+
+/* Urgent */
+element normal.urgent {
+    background-color:        @error;
+    text-color:              @on-surface;
+}
+
+/* Selected */
+element selected.normal {
+    background-color:        @primary;
+    text-color:              @on-primary;
+}
+
+element selected.active {
+    background-color:        @primary;
+    text-color:              @on-primary;
+}
+
+element selected.urgent {
+    background-color:        @error;
+    text-color:              @on-error;
+}
+
+/* Alternate rows */
+element alternate.normal,
+element alternate.active,
+element alternate.urgent {
+    background-color:        transparent;
+    text-color:              @on-surface;
+}
+
+/* ---- Icons ---- */
+element-icon {
+    background-color:        transparent;
+    text-color:              inherit;
+    size:                    28px;
+    cursor:                  inherit;
+}
+
+/* ---- Text ---- */
+element-text {
+    background-color:        transparent;
+    text-color:              inherit;
+    cursor:                  inherit;
+    vertical-align:          0.5;
+    horizontal-align:        0.0;
+}
+
+/* ---- Message ---- */
+message {
+    background-color:        transparent;
+    border:                  0px;
+}
+
+textbox {
+    margin:                  10px;
+    padding:                 8px;
+    background-color:        @secondary-container;
+    text-color:              @on-secondary-container;
+    vertical-align:          0.5;
+    horizontal-align:        0.5;
+}
+
+error-message {
+    padding:                 8px;
+    background-color:        @error-container;
+    text-color:              @on-error-container;
+}

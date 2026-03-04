@@ -1,0 +1,28 @@
+{
+  "title": "Color Scheme Options",
+  "navigation": {
+    "prev_tab": ["Left", "H"],
+    "next_tab": ["Right", "L"],
+    "scroll_up": ["Up", "K"],
+    "scroll_down": ["Down", "J"]
+  },
+  "tabs": {
+    "Color Mode": [
+      { "option": "dark", "desc": " Genererates dark color scheme" },
+      { "option": "light", "desc": "Genererates light color scheme" },
+      { "option": "both", "desc": " Genererates both light and dark(mixture) color scheme" }
+    ],
+    "Color Scheme": [
+      { "option": "tonal-spot", "desc": "Default Android 12-13 Material You scheme" },
+      { "option": "content", "desc": "Preserves source color's chroma with temperature-based tertiary" },
+      { "option": "fruit-salad", "desc": "Bold/playful with -50° hue rotation" },
+      { "option": "rainbow", "desc": "Chromatic accents with grayscale neutrals" },
+      { "option": "monochrome", "desc": "Pure grayscale M3 scheme" },
+      { "option": "vibrant", "desc": "Prioritizes the most saturated colors regardless of area coverage" },
+      { "option": "faithful", "desc": " Prioritizes dominant colors by area, what you see is what you get" },
+      { "option": "dysfunctional", "desc": "Like faithful but picks the 2nd most dominant color family" },
+      { "option": "muted", "desc": "Preserves hue but caps saturation low" }
+    ]
+  }
+}
+
