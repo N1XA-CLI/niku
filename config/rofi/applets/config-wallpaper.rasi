@@ -1,0 +1,154 @@
+@import "~/.config/rofi/colors.rasi"
+configuration {
+    modi:                        "drun";
+    hover-select:            false;
+    font:                    "JetBrainsMono Nerd Font 12";
+    show-icons:                  true;
+    drun-display-format:         "{name}";
+    me-select-entry:             "MouseSecondary";
+    me-accept-entry:             "MousePrimary";
+    window-format:               "{w} · {c} · {t}";
+    dpi:                         1;
+}
+
+* {
+    background-alt:              @surface;
+    selected:                    rgba(255,255,255,0.16);
+    active:                      rgba(255,255,255,0.10);
+    urgent:                      rgba(255,80,80,0.28);
+    text-color:                  @on-surface;
+    text-selected:               rgba(255,255,255,0.98);
+    border-color:                @outline;
+}
+
+/* ───────── Window ───────── */
+
+window {
+    enabled:                     true;
+    fullscreen:                  false;
+    transparency:                "real";
+    cursor:                      "default";
+
+    location:                    center;
+    anchor:                      center;
+    width:                       85%;
+
+    spacing:                     0px;
+    border:                      1px;
+    border-radius:               20px;
+
+    /* IMPORTANT FOR BLUR */
+    background-color:            @surface;
+    border-color:                @outline;
+}
+
+/* ───────── Layout ───────── */
+
+mainbox {
+    enabled:                     true;
+    children:                    [ "inputbar", "listview" ];
+    background-color:            transparent;
+}
+
+/* ───────── Input ───────── */
+
+/* ───────── Search Bar ───────── */
+
+inputbar {
+    enabled:                     true;
+    padding:                     14px 20px;
+    margin:                      20px 30px 10px 30px;
+
+    border-radius:               10px;
+    background-color:            @surface-container;
+
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    text-color:                  @primary;
+    padding:                     0px 8px 0px 0px;
+    background-color:            transparent;
+}
+
+entry {
+    enabled:                     true;
+    placeholder:                 "Type to filter...";
+    placeholder-color:           @on-surface;
+
+    text-color:                  @on-surface;
+    background-color:            transparent;
+}
+/* ───────── Grid ───────── */
+
+listview {
+    enabled:                     true;
+    columns:                     5;
+    lines:                       1;
+
+    padding:                     26px 36px;
+    spacing:                     20px;
+
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+
+    layout:                      vertical;
+    fixed-height:                true;
+    fixed-columns:               true;
+
+    background-color:            transparent;
+    border:                      0px;
+}
+
+/* ───────── Tiles ───────── */
+
+element {
+    enabled:                     true;
+    orientation:                 vertical;
+    expand:                      false;
+    padding:                     5px 10px;
+    border-radius:               10px;
+    cursor:                      pointer;
+    text-color:                  @on-surface;
+    background-color:            @surface-container-lowest;
+}
+
+element normal.normal {
+    background-color:            rgba(255,255,255,0.06);
+        text-color:                  @on-surface;
+}
+
+element normal.active {
+    background-color:            rgba(255,255,255,0.10);
+        text-color:                  @on-surface;
+}
+
+element normal.urgent {
+    background-color:            rgba(255,60,60,0.25);
+        text-color:                  @on-surface;
+}
+
+element selected.normal {
+    background-color:            @primary;
+    text-color:                  @on-primary;
+}
+
+element alternate.normal {
+    background-color:            rgba(255,255,255,0.05);
+        text-color:                  @on-surface;
+}
+
+/* ───────── Icon & Text ───────── */
+
+element-icon {
+    size:                        25%;
+    padding:                     0px;
+    background-color:            transparent;
+}
+
+element-text {
+    padding-left:                0px;
+    background-color:            transparent;
+}

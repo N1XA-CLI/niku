@@ -17,7 +17,7 @@ sleep 1
 waybar &
 
 # relaunch swaync
-# sleep 0.5
-# swaync >/dev/null 2>&1 &
+sleep 0.5
+swaync >/dev/null 2>&1 &
 
 exit 0
