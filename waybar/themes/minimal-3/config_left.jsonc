@@ -1,0 +1,56 @@
+
+{
+  "layer": "top",
+  "position": "left",
+  "exclusive": true,
+  "height": 0,
+  "width": 40,
+  "spacing": 0,
+  "margin-top": 12,
+  "margin-bottom": 5,
+  "margin-left": 10,
+  "margin-right": 10,
+    "modules-left": ["clock"],
+    "modules-center": ["niri/workspaces"],
+    "modules-right": [ "tray", "mpris","pulseaudio"],
+    "pulseaudio": {
+    	"format": "{volume}%"
+    },
+    "backlight": {
+    "format": "{percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "niri/workspaces": {
+      "format": "{index}"
+    },
+    "mpris": {
+	    "format": "\uee58",
+    	"format-stopped": "",
+    	"interval": "0.1",
+      "on-click": "playerctl previous",
+      "on-click-middle": "playerctl play-pause",
+      "on-click-right": "playerctl next",
+	    "ignored-players": ["brave"],
+	    "tooltip": true,
+	    "tooltip-format": "{artist} - {title}"
+    },
+    "clock": {
+      "format": "{:%I\n%M\n%p}",
+      "interval": 1,
+      "tooltip-format": "{:%A %d %B %Y}"
+    },
+    "tray": {
+    	"spacing": 12,
+	    "show-passive-items": true
+    },
+    "battery": {
+    	"format": "{capacity}%",
+    	"format-charging": "{capacity}% ",
+    	"format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    	"interval": 1
+    },
+    "custom/d": {
+        "format": "|",
+        "tooltip": false
+    }
+}

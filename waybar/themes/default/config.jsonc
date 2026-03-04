@@ -1,0 +1,131 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin-left": 10,
+  "margin-right": 10,
+  "margin-top": 0,
+  "margin-bottom": -10,
+  "modules-left": ["custom/menu", "clock", "custom/mpd-prev", "mpd", "custom/mpd-next"],
+
+  "modules-center": ["hyprland/workspaces"],
+
+  "modules-right": [
+    "tray",
+    "custom/notification",
+    "network",
+    "pulseaudio",
+    "custom/power",
+  ],
+
+  "hyprland/workspaces": {
+    "active-only": false,
+    "all-outputs": true,
+    "on-click": "activate",
+    "format": "{icon}",
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5],
+    },
+    "format-icons": {
+      "1": "", // Firefox
+      "2": "󰨞", // VS Code
+      "3": "", // Terminal
+      "4": "", // Spotify
+      "5": "", // Files
+      "default": "󰄯",
+    },
+  },
+  "clock": {
+    "timezone": "Asia/Kolkata",
+    "tooltip": false,
+    "format": "{:%H:%M  -  %A, %d/%m/%y}",
+    "interval": 1,
+    "on-click": "qs -c ~/.config/quickshell/music msg music toggle",
+  },
+
+  "network": {
+    "format-wifi": "󰤢  {essid}",
+    "format-ethernet": "󰈀  {ifname}",
+    "format-disconnected": "󰤠 ",
+    "interval": 5,
+    "tooltip": false,
+    "on-click": "nm-connection-editor",
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", " "],
+    },
+    "tooltip": false,
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+  },
+  "custom/power": {
+    "format": " ",
+    "on-click": "wlogout",
+    "tooltip": false,
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 5,
+    "icons": {
+      "blueman": "bluetooth",
+      "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png",
+    },
+  },
+  "custom/notification": {
+    "tooltip": true,
+    "format": "<span size='16pt'>{icon}</span>",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑",
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true,
+  },
+  "custom/mpd-prev": {
+    "format": "󰒮",
+    "on-click": "mpc prev",
+    "tooltip": false
+  },
+  "mpd": {
+    "format": "{stateIcon}   {title}",
+    "format-paused": "   {title}",
+    "format-stopped": "  MPD",
+    "state-icons": {
+      "playing": "",
+      "paused": "",
+      "stopped": "",
+    },
+    "max-length": 20,
+    "ellipsis": true,
+    "tooltip": false,
+    "on-click": "mpc toggle",
+    "on-scroll-up": "mpc next",
+    "on-scroll-down": "mpc prev"
+  },
+  "custom/mpd-next": {
+    "format": "󰒭",
+    "on-click": "mpc next",
+    "tooltip": false
+  },
+  "custom/menu": {
+    "format": "{}",
+    "exec": "echo ; echo 󱓟 app launcher",
+    "interval": 86400, // once every day
+    "tooltip": false,
+    "on-click": "pkill rofi || rofi -show drun",
+    "on-click-right": "~/.config/hypr/wppicker.sh",
+  }
+}
+

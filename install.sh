@@ -2,7 +2,7 @@
 set -e
 
 AUR_HELPER="yay"
-PACKAGES=(rsync fastfetch kitty niri neovim obs-studio yazi waybar rofi swww unzip curl matugen btop cava nwg-look swaync adw-gtk-theme rmpc-git mpd)
+PACKAGES=(rsync fastfetch kitty niri neovim obs-studio yazi waybar rofi swww unzip curl matugen btop cava nwg-look swaync adw-gtk-theme wlsunset)
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 SOURCE_DIR="$SCRIPT_DIR/config/"
 DEST_DIR="$HOME/.config/"

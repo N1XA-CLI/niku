@@ -1,0 +1,166 @@
+/* --- Global Styles --- */
+@import "colors/colors.css";
+* {
+  font-family:
+    "Google Sans Flex", "SF Pro Display", "Segoe UI, GeistMono Nerd Font Propo",
+    sans-serif;
+  min-height: 0;
+  /* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
+  font-size: 0.82rem;
+}
+
+/* --- Waybar Container --- */
+#waybar {
+  background: transparent;
+  border-radius: 20px;
+  margin: 0px;
+  font-weight: 500;
+}
+
+/* --- Left Modules (Individual, Fully Rounded Blocks - With Horizontal Spacing & Simple Hover) --- */
+#workspaces {
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px; /* 5px top/bottom margin, 0px left/right (base for individual control) */
+  border-radius: 6px; /* These modules are always rounded */
+  min-width: 0;
+  border: none;
+  /* Transition for background-color and color only */
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+}
+
+#workspaces {
+  padding: 0.3rem 2px;
+  border-radius: 100px;
+  margin-left: 7px; /* Margin from the far left edge */
+  margin-right: 5px; /* Spacing after the workspaces module */
+  background: @surface;
+
+  color: @on_surface;
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+}
+
+#workspaces button {
+  /* color: @primary_fixed; */
+  border-radius: 20px; /* Workspaces buttons are always rounded */
+  padding: 0.3rem 0.5rem;
+  margin: 0px 3px;
+  color: transparent;
+  background: @surface_container_highest;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  outline: none;
+}
+
+#workspaces button.active {
+  background-color: @primary;
+  color: @surface;
+  padding: 0.3rem 1rem;
+  min-width: 35px;
+}
+
+#workspaces button:hover {
+  background-color: @tertiary;
+  color: @surface;
+  min-width: 35px;
+}
+
+#clock {
+  color: @primary;
+  background-color: @surface;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 10px;
+  border-radius: 100px; /* This module is always rounded */
+  min-width: 0;
+  border: none;
+}
+#custom-power,
+#custom-notification,
+#pulseaudio,
+#network {
+  background-color: @surface;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 5px;
+  border-radius: 100px;
+  min-width: 0;
+  color: @tertiary;
+  border: none;
+}
+
+#custom-power {
+  padding-right: 0.25rem;
+  transition: all 0.2s ease-in-out;
+  color: @error;
+  min-width: 15px;
+}
+#tray {
+  padding-right: 0.45rem;
+}
+#custom-notification {
+  padding-right: 0.68rem;
+  transition: all 0.2s ease-in-out;
+  border-radius: 100px;
+}
+
+#mpd {
+  color: @primary;
+  background-color: @surface;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px;
+  border-radius: 100px; /* This module is always rounded */
+  min-width: 0;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+#custom-mpd-prev,
+#custom-mpd-next {
+  color: @primary;
+  background-color: @surface;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px;
+  border-radius: 100px;
+  min-width: 0;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+#custom-mpd-prev {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-left: 10px;
+  margin-right: 0px;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+#custom-mpd-next {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 5px;
+  padding-right: 10px;
+}
+#mpd {
+  border-radius: 0;
+  margin-left: 0;
+}
+#custom-mpd-prev:hover,
+#custom-mpd-next:hover {
+  background-color: @surface_container_highest;
+}
+
+#custom-menu {
+  background-color: @surface;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 5px;
+  border-radius: 100px;
+  color: @on_surface;
+  min-width: 13px;
+  border: none;
+  padding-right: 0.8rem;
+  transition: all 0.2s ease-in-out;
+}
