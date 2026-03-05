@@ -87,7 +87,7 @@ Some things are better seen in motion.
 
 You can find **Niku video demos**, looks, and workflow showcases on my Reddit profile:
 
-👉 [Reddit](**https://www.reddit.com/user/Scary-Combination-67/submitted/**)
+👉 [Reddit](https://www.reddit.com/user/Scary-Combination-67/submitted/)
 
 (New videos will be added as features evolve.)
 
