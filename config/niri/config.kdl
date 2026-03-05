@@ -183,13 +183,15 @@ window-rule {
 hotkey-overlay {
     skip-at-startup
 }
-spawn-at-startup     "wl-paste --type image --watch cliphist store"
-spawn-at-startup     "wl-paste --type text --watch cliphist store"
+
+// spawn-at-startup     "cliphist" "wipe" // This wipes the clipboard history
+spawn-sh-at-startup     "wl-paste --type text --watch cliphist store"
+spawn-sh-at-startup     "wl-paste --type image --watch cliphist store"
+spawn-sh-at-startup     "wl-clip-persist --clipboard regular"
+spawn-sh-at-startup  "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &"
 spawn-at-startup     "wlsunset"
 spawn-at-startup     "swww-daemon"
 spawn-at-startup     "waybar"
-spawn-at-startup     "dunst"
-spawn-sh-at-startup  "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &"
 spawn-at-startup     "swaync"
 spawn-at-startup     "playerctld"
 spawn-at-startup     "swayosd-server"
@@ -212,6 +214,7 @@ binds {
     Mod+C                               hotkey-overlay-title="Open nvim in terminal"        { spawn-sh "kitty nvim"; } 
     Mod+N                               hotkey-overlay-title="Toggle notification center"   { spawn-sh "swaync-client -t -sw"; }
     Mod+M                               hotkey-overlay-title="Open floating music player"   { spawn-sh "kitty --app-id=floatingterm rmpc"; }
+    Mod+V                               hotkey-overlay-title="Open clipboard hisotry"       { spawn-sh "pkill rofi || ~/.config/niku/scripts/bash/clip.sh"; }
     Mod+grave                           hotkey-overlay-title="Open cheatsheet"              { spawn-sh "~/.config/niku/scripts/bash/key.sh"; }
     Mod+Shift+N                         hotkey-overlay-title="Toggle Night Mode"            { spawn-sh "killall wlsunset || wlsunset -t 4000 -g 0.8"; }
     Mod+Alt+C                         hotkey-overlay-title="Change Color Scheme option"   { spawn-sh "~/.config/niku/scripts/bash/color-scheme-options.sh"; }
