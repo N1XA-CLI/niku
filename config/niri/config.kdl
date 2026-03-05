@@ -202,9 +202,9 @@ spawn-at-startup     "swayosd-server"
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+RETURN                          hotkey-overlay-title="Open a Terminal: kitty"       { spawn-sh "kitty"; }
-    Ctrl+Escape 			                  hotkey-overlay-title="Kill or Start: Waybar"        { spawn-sh "~/.config/waybar/scripts/toggle_waybar.sh"; }
-    Mod+Escape 				                  hotkey-overlay-title="Toggle Powermenu"             { spawn-sh "pkill wlogout || ~/.config/niri/scripts/Wlogout.sh"; }
-    Mod+A                               hotkey-overlay-title="Toggle an Application: tofi"  { spawn-sh "pkill rofi || rofi -show drun"; }
+    Ctrl+Escape 			                  hotkey-overlay-title="Kill or Start: Waybar"        { spawn-sh "~/.config/niku/scripts/bash/toggle_waybar.sh"; }
+    Mod+Escape 				                  hotkey-overlay-title="Toggle Powermenu"             { spawn-sh "pkill wlogout || ~/.config/niku/scripts/bash/wlogout.sh"; }
+    Mod+A                               hotkey-overlay-title="Toggle an Application: Rofi"  { spawn-sh "pkill rofi || rofi -show drun"; }
     Mod+E                               hotkey-overlay-title="Open floating terminal File Manager"   { spawn-sh "kitty --app-id=floatingterm yazi"; }
     Alt+L 			                        hotkey-overlay-title="Lock Screen: gtklock"         { spawn-sh "gtklock"; }
     Mod+Q 				                      repeat=false                                        { close-window; }
@@ -212,9 +212,10 @@ binds {
     Mod+C                               hotkey-overlay-title="Open nvim in terminal"        { spawn-sh "kitty nvim"; } 
     Mod+N                               hotkey-overlay-title="Toggle notification center"   { spawn-sh "swaync-client -t -sw"; }
     Mod+M                               hotkey-overlay-title="Open floating music player"   { spawn-sh "kitty --app-id=floatingterm rmpc"; }
-    Mod+grave                           hotkey-overlay-title="Open cheatsheet"              { spawn-sh "pkill rofi || ~/.config/rofi/scripts/key.sh"; }
+    Mod+grave                           hotkey-overlay-title="Open cheatsheet"              { spawn-sh "~/.config/niku/scripts/bash/key.sh"; }
     Mod+Shift+N                         hotkey-overlay-title="Toggle Night Mode"            { spawn-sh "killall wlsunset || wlsunset -t 4000 -g 0.8"; }
-    Mod+Shift+W                         hotkey-overlay-title="Change Wallpaper"             { spawn-sh "pkill rofi || $HOME/.config/niri/scripts/wall_selector.sh"; }
+    Mod+Alt+C                         hotkey-overlay-title="Change Color Scheme option"   { spawn-sh "~/.config/niku/scripts/bash/color-scheme-options.sh"; }
+    Mod+Shift+W                         hotkey-overlay-title="Change Wallpaper"             { spawn-sh "pkill rofi || ~/.config/niku/scripts/bash/wall_selector.sh"; }
     Mod+Shift+T                       hotkey-overlay-title="Open floating Terminal"       { spawn-sh "kitty --app-id=floatingterm"; }
 
     XF86AudioRaiseVolume                allow-when-locked=true                              { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
@@ -382,14 +383,11 @@ recent-windows {
     }
 
     binds {
-        //Alt+Tab         { next-window; }
-        //Alt+Shift+Tab   { previous-window; }
-        //Alt+grave       { next-window     filter="app-id"; }
-        //Alt+Shift+grave { previous-window filter="app-id"; }
-
-        Mod+Tab         { next-window; }
-        Mod+Shift+Tab   { previous-window; }
-        //Mod+grave       { next-window     filter="app-id"; }
-        //Mod+Shift+grave { previous-window filter="app-id"; }
+        Alt+Tab         { next-window; }
+        Alt+Shift+Tab   { previous-window; }
     }
 }
+
+
+// Do not remove it.
+include "./colors/niri-colors.kdl"

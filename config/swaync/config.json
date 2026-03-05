@@ -79,7 +79,7 @@
         {
           "label": "󰐥",
           "type": "button",
-          "command": "bash -c $HOME/.config/hypr/scripts/Wlogout.sh"
+          "command": "bash -c $HOME/.config/niku/scripts/bash/system-utils/Wlogout.sh"
         },
         {
           "label": "󰌾",
@@ -99,8 +99,8 @@
 		{
 		  "label": "",
 		  "type": "toggle",
-		  "active": "~/.config/hypr/scripts/caffeine_status.sh",
-          "command": "~/.config/hypr/scripts/caffeine_toggle.sh"
+		  "active": "~/.config/niku/scripts/bash/system-utils/caffeine_status.sh",
+          "command": "~/.config/niku/scripts/bash/system-utils/caffeine_toggle.sh"
 		},
         {
           "label": "",
