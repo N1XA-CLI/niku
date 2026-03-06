@@ -10,7 +10,7 @@ THEMES=$(find "$THEMES_DIR" -maxdepth 1 -type f -name '*.rasi' \
          -exec basename {} .rasi \;)
 
 # Show menu
-THEME=$(printf "%s\n" "$THEMES" | rofi -dmenu -p "Rofi Theme" -config "$HOME/.config/rofi/ts.rasi")
+THEME=$(printf "%s\n" "$THEMES" | rofi -dmenu -p "Rofi Theme" -config "$HOME/.config/rofi/applets/rofi-theme-switch.rasi")
 [ -z "$THEME" ] && exit 0
 
 # Replace @theme line (modern syntax)

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source ~/.config/niku/scripts/bash/functions.sh
+
 JSON="$HOME/.config/rofi/scripts/color-scheme-options.json"
 ROFI_THEME="$HOME/.config/rofi/applets/color-scheme-option.rasi"
 SCHEME_PATH="$HOME/.config/niku/Color-Generator/command/current_command/scheme"
@@ -37,16 +39,16 @@ while true; do
         option=$(echo "$SELECTED_ENTRY" | awk -F' → ' '{print $1}')
 
         if [[ "$SELECTED_TAB" == "Color Mode" ]]; then
-          rm -f "$MODE_PATH"/*
-          ln -sf "$option" "$MODE_PATH"
-          notify-send "Updating Color Mode" --icon="$HOME/.config/niku/Color-Generator/matugen/assets/paint-brush.webp" & 
-          "$HOME/.config/niku/scripts/bash/matugen.sh"
+          rm -f "$MODE_PATH"/* &
+            ln -sf "$option" "$MODE_PATH" &
+              notify_color_update &
+                "$HOME/.config/niku/scripts/bash/matugen.sh"
 
         elif [[ "$SELECTED_TAB" == "Color Scheme" ]]; then
-          rm -f "$SCHEME_PATH"/*
-          ln -sf "$option" "$SCHEME_PATH"
-          notify-send "Updating Color Scheme" --icon="$HOME/.config/niku/Color-Generator/matugen/assets/paint-brush.webp" &
-          "$HOME/.config/niku/scripts/bash/matugen.sh"
+          rm -f "$SCHEME_PATH"/* &
+            ln -sf "$option" "$SCHEME_PATH" &
+              notify_color_scheme_update &
+                "$HOME/.config/niku/scripts/bash/matugen.sh"
         fi
 
         exit

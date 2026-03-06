@@ -5,7 +5,7 @@ THEMES_DIR="$WAYBAR_DIR/themes"
 CURRENT_THEME_FILE="$WAYBAR_DIR/.current_theme"
 
 # Init state
-[ -f "$CURRENT_THEME_FILE" ] || echo "default" > "$CURRENT_THEME_FILE"
+[ -f "$CURRENT_THEME_FILE" ] || echo "default" > "$CURRENT_THEME_FILE:wq"
 
 # Get themes
 THEMES=$(ls "$THEMES_DIR")

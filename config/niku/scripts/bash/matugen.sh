@@ -12,11 +12,15 @@ COLOR_MODE=$(ls "$HOME/.config/niku/Color-Generator/command/current_command/mode
     exit 1
 }
 
+# If no color mode present
 if [ -z "$COLOR_MODE" ]; then
+  # create a mode 
   COLOR_MODE="both"
 fi
 
+# If no color scheme present
 if [ -z "$COLOR_SCHEME" ]; then
+
   COLOR_SCHEME="tonal-spot"
 fi
 
@@ -25,7 +29,7 @@ if python3 "$SCRIPT" "$CURRENT_WALL" --scheme-type "$COLOR_SCHEME" --config "$CO
   # Set gtk theme
   gsettings set org.gnome.desktop.interface gtk-theme ""
   gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3
-    # convert and resize the current wallpaper & make it image for rofi with blur
+  # convert and resize the current wallpaper & make it image for rofi with blur
   magick "$CURRENT_WALL" -strip -resize 800x800^ -gravity center -extent 800x800 -blur 40x40 -colors 64 -quality 30 "$HOME/.config/rofi/images/currentWalBlur.webp"
   # convert and resize the current wallpaper & make it image for rofi without blur
   magick "$CURRENT_WALL" -strip -resize 700x700^ -gravity center -extent 700x700 -colors 32 -quality 40 "$HOME/.config/rofi/images/currentWal.webp"

@@ -5,6 +5,7 @@ version_check = false
 [templates.niri]
 input_path = '~/.config/niku/Color-Generator/matugen/templates/niri-colors.kdl'
 output_path = '~/.config/niri/colors/niri-colors.kdl'
+post_hook = 'niri msg action load-config-file' # Not Important but given so everything goes smoothly.
 
 
 [templates.btop]
@@ -20,7 +21,8 @@ output_path = '~/.config/rofi/colors.rasi'
 [templates.waybar]
 input_path = '~/.config/niku/Color-Generator/matugen/templates/colors.css'
 output_path = '~/.config/waybar/colors/colors.css'
-post_hook = "pkill -SIGUSR2 waybar & swaync-client -rs" # This command reloads css. Swaync uses waybar color
+post_hook = "pkill -SIGUSR2 waybar & swaync-client -rs" # This command reloads css. Swaync uses waybar colors
+
 
 [templates.cava]
 input_path = '~/.config/niku/Color-Generator/matugen/templates/cava-colors.ini'
@@ -54,6 +56,10 @@ output_path = '~/.config/yazi/flavors/niku.toml'
 [templates.spicetify]
 input_path = '~/.config/niku/Color-Generator/matugen/templates/spicetify.ini'
 output_path = '~/.config/spicetify/Themes/niku/color.ini'
-# Commenting to record rice
-#post_hook = '~/.config/niku/Color-Generator/matugen/scripts/spice.sh'
+# post_hook = '~/.config/niku/Color-Generator/matugen/scripts/spice.sh'
 
+
+[templates.pywalfox]
+input_path = '~/.config/niku/Color-Generator/matugen/templates/pywalfox.json'
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'pywalfox update'
