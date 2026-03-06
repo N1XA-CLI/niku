@@ -70,3 +70,12 @@ link_configs() {
         ln -sfn "$dir" "$CONFIG_DEST/$name"
     done
 }
+
+copy_configs() {
+    mkdir -p "$CONFIG_DEST"
+
+    for dir in "$CONFIG_SOURCE"/*; do
+        name=$(basename "$dir")
+        cp -r "$dir" "$CONFIG_DEST/$name"
+    done
+}
