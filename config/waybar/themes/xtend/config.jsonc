@@ -3,9 +3,9 @@
   "position": "bottom",
   "margin-left": 15,
   "margin-right": 15,
-  "margin-top": -8,
+  "margin-top": 0,
   "margin-bottom": 3,
-  "modules-left": ["hyprland/workspaces"],
+  "modules-left": ["niri/workspaces"],
 
   "modules-center": ["custom/mpd-prev", "mpd", "custom/mpd-next"],
 
@@ -15,32 +15,24 @@
     "network",
     "pulseaudio",
     "custom/notification",
-    "custom/power",
+    "custom/power"
   ],
-
-  "hyprland/workspaces": {
+  "niri/workspaces": {
     "active-only": false,
     "all-outputs": true,
     "on-click": "activate",
-    "format": "{icon}",
-    "persistent-workspaces": {
-      "*": [1, 2, 3, 4, 5],
-    },
+	  "format": "{icon}",
     "format-icons": {
-      "1": "", // Firefox
-      "2": "󰨞", // VS Code
-      "3": "", // Terminal
-      "4": "", // Spotify
-      "5": "", // Files
-      "default": "󰄯",
-    },
+      "default": "󰄯"
+    }
   },
+
   "clock": {
     "timezone": "Asia/Kolkata",
     "tooltip": false,
     "format": "   {:%H:%M}",
     "interval": 1,
-    "on-click": "qs -c ~/.config/quickshell/music msg music toggle",
+    "on-click": "qs -c ~/.config/quickshell/music msg music toggle"
   },
 
   "network": {
@@ -49,30 +41,31 @@
     "format-disconnected": "󰤠 ",
     "interval": 5,
     "tooltip": false,
-    "on-click": "nm-connection-editor",
+    "on-click": "nm-connection-editor"
   },
 
   "pulseaudio": {
     "format": "{icon}  {volume}%",
     "format-muted": " ",
     "format-icons": {
-      "default": ["", "", " "],
+      "default": ["", "", " "]
     },
     "tooltip": false,
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
   },
   "custom/power": {
     "format": " ",
-    "on-click": "wlogout",
-    "tooltip": false,
+    "on-click": "~/.config/niku/scripts/bash/wlogout.sh",
+    "tooltip": false
   },
   "tray": {
     "icon-size": 18,
     "spacing": 5,
+	  "show-passive-items": true,
     "icons": {
       "blueman": "bluetooth",
-      "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png",
-    },
+      "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+    }
   },
   "custom/notification": {
     "tooltip": true,
@@ -85,14 +78,14 @@
       "inhibited-notification": "󰂛",
       "inhibited-none": "󰪑",
       "dnd-inhibited-notification": "󰂛",
-      "dnd-inhibited-none": "󰪑",
+      "dnd-inhibited-none": "󰪑"
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
     "exec": "swaync-client -swb",
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
-    "escape": true,
+    "escape": true
   },
   "custom/mpd-prev": {
     "format": "󰒮",
@@ -106,7 +99,7 @@
     "state-icons": {
       "playing": "",
       "paused": "",
-      "stopped": "",
+      "stopped": ""
     },
     "max-length": 40,
     "ellipsis": true,
@@ -126,7 +119,7 @@
     "interval": 86400, // once every day
     "tooltip": false,
     "on-click": "pkill rofi || rofi -show drun",
-    "on-click-right": "~/.config/hypr/wppicker.sh",
+    "on-click-right": "~/.config/niku/scripts/bash/hypicker.sh"
   }
 }
 

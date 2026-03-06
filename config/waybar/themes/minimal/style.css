@@ -1,8 +1,7 @@
 /* --- Global Styles --- */
 @import "colors/colors.css";
 * {
-  font-family: "Google Sans Flex", "SF Pro Display",
-    "Segoe UI, GeistMono Nerd Font Propo", sans-serif;
+  font-family: "Google Sans Flex", "SF Pro Display", "Segoe UI, GeistMono Nerd Font Propo", sans-serif;
   min-height: 0;
   /* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
   font-size: 0.9rem;
@@ -53,13 +52,7 @@
 }
 
 #workspaces button.active {
-
-  background: linear-gradient(
-    135deg,
-    @primary 0%,
-    @secondary 50%,
-    @tertiary 100%
-  );
+  background: linear-gradient(135deg, @primary 0%, @secondary 50%, @tertiary 100% );
   color: @surface;
   padding: 0.3rem 1rem;
   min-width: 25px;

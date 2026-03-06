@@ -67,3 +67,6 @@ zen-browser-bin
 zoxide
 wlsunset
 wl-clipboard
+mpc
+mpd
+nm-connection-editor

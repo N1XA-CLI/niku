@@ -10,44 +10,61 @@
   "modules-left": ["niri/workspaces"],
   "modules-center": ["clock"],
   "modules-right": [ "tray", "mpris", "custom/d", "pulseaudio"],
-    "pulseaudio": {
-    	"format": "{volume}%"
+
+  "pulseaudio": {
+    "format": "{volume}%",
+    "format-muted": " ",
+    "format-icons": {
+      "default": ["", "", " "]
     },
-    "backlight": {
-        "format": "{percent}%",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
-    },
-    "niri/workspaces": {
-        "format": "{index}"
-    },
-    "mpris": {
-	"format": "\uee58",
-	"format-stopped": "\udb81\udfce",
-	"interval": "0.1",
-	"on-click": "playerctl previous",
-	"on-click-middle": "playerctl play-pause",
-	"on-click-right": "playerctl next",
-	"ignored-players": ["brave"],
-	"tooltip": true,
-	"tooltip-format": "{artist} - {title}"
-    },
-    "clock": {
-	"format": "{:%I:%M %p}",
-	"interval": 1,
-	"tooltip-format": "{:%A %d %B %Y}"
-    },
-    "tray": {
-	"spacing": 12,
-	"show-passive-items": true
-    },
-    "battery": {
-    	"format": "{capacity}%",
-    	"format-charging": "{capacity}% ",
-    	"format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-    	"interval": 1
-    },
-    "custom/d": {
-        "format": "|",
-        "tooltip": false
-    }
+    "tooltip": false,
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  },
+
+  "backlight": {
+    "format": "{percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
+  },
+
+  "niri/workspaces": {
+    "active-only": false,
+    "all-outputs": true,
+    "on-click": "activate",
+	  "format": "{icon}"
+  },
+
+  "mpris": {
+	  "format": "\uee58",
+	  "format-stopped": "\udb81\udfce",
+	  "interval": "0.1",
+	  "on-click": "playerctl previous",
+	  "on-click-middle": "playerctl play-pause",
+	  "on-click-right": "playerctl next",
+	  "ignored-players": ["brave"],
+	  "tooltip": true,
+	  "tooltip-format": "{artist} - {title}"
+  },
+
+  "clock": {
+	  "format": "{:%I:%M %p}",
+	  "interval": 1,
+	  "tooltip-format": "{:%A %d %B %Y}"
+  },
+    
+  "tray": {
+	  "spacing": 12,
+	  "show-passive-items": true
+  },
+
+  "battery": {
+    "format": "{capacity}%",
+    "format-charging": "{capacity}% ",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "interval": 1
+  },
+
+  "custom/d": {
+    "format": "|",
+    "tooltip": false
+  }
 }
