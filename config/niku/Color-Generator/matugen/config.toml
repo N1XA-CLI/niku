@@ -29,7 +29,7 @@ post_hook = "pkill -USR1 cava"
 
 
 [templates.kitty]
-input_path = '~/.config/niku/Color-Generator/matugen/templates/kitty-colors.conf'
+input_path = '~/.config/niku/Color-Generator/matugen/templates/terminal/kitty-colors.conf'
 output_path = '~/.config/kitty/colors.conf'
 post_hook = 'pkill -USR1 kitty'
 

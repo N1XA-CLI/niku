@@ -45,7 +45,7 @@ layout {
     }
 }
 overview {
-    zoom 0.35
+    zoom 0.30
     workspace-shadow {
         off
     }
@@ -80,17 +80,21 @@ layer-rule {
     match namespace="waybar"
     match at-startup=true
 
-    opacity 0.8
+}
+layer-rule { 
+    match namespace="waybar"
+    match at-startup=true
+
+    opacity 0.99
     shadow {
         on
-        softness 5
-        spread 2
-        offset x=0 y=5
+        softness 0
+        spread 0
+        offset x=0 y=0
     }
 
     geometry-corner-radius 10
 }
-
 // // // // // // // // // //
 // // // ScreenShots // // //
 // // // // // // // // // //
@@ -153,7 +157,7 @@ window-rule {
 
     // match app-id="^" // For all apps
     // match app-id="code"
-    // match app-id="kitty"
+    match app-id="kitty"
     match app-id="vesktop"
     match app-id="org.qbittorrent.qBittorrent"
     match app-id="thunar"
@@ -192,6 +196,7 @@ spawn-sh-at-startup  "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
 spawn-at-startup     "wlsunset"
 spawn-at-startup     "swww-daemon"
 spawn-at-startup     "waybar"
+
 spawn-at-startup     "swaync"
 spawn-at-startup     "playerctld"
 spawn-at-startup     "swayosd-server"
@@ -219,8 +224,8 @@ binds {
     Mod+Shift+N                         hotkey-overlay-title="Toggle Night Mode"            { spawn-sh "killall wlsunset || wlsunset -t 4000 -g 0.8"; }
     Mod+Alt+C                         hotkey-overlay-title="Change Color Scheme option"   { spawn-sh "~/.config/niku/scripts/bash/color-scheme-options.sh"; }
     Mod+Shift+W                         hotkey-overlay-title="Change Wallpaper"             { spawn-sh "pkill rofi || ~/.config/niku/scripts/bash/wall_selector.sh"; }
-    Mod+Shift+T                       hotkey-overlay-title="Open floating Terminal"       { spawn-sh "kitty --app-id=floatingterm"; }
-
+    Mod+Shift+RETURN                       hotkey-overlay-title="Open floating Terminal"       { spawn-sh "kitty --app-id=floatingterm"; }
+    Alt+B                               hotkey-overlay-title="Change waybar style"          { spawn-sh "killall rofi || ~/.config/niku/scripts/bash/waybar-theme-rofi.sh"; }
     XF86AudioRaiseVolume                allow-when-locked=true                              { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
     XF86AudioLowerVolume                allow-when-locked=true                              { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
     XF86AudioMute                       allow-when-locked=true                              { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }

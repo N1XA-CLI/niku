@@ -94,7 +94,7 @@
         {
           "label": "",
           "type": "button",
-          "command": "hyprpicker -a"
+          "command": "~/.config/niku/scripts/bash/hypicker.sh"
         },
 		{
 		  "label": "",

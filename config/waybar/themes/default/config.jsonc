@@ -4,42 +4,46 @@
   "margin-left": 10,
   "margin-right": 10,
   "margin-top": 0,
-  "margin-bottom": -10,
+  "margin-bottom": -5,
   "modules-left": ["custom/menu", "clock", "custom/mpd-prev", "mpd", "custom/mpd-next"],
 
-  "modules-center": ["hyprland/workspaces"],
+  "modules-center": ["niri/workspaces"],
 
   "modules-right": [
     "tray",
     "custom/notification",
     "network",
     "pulseaudio",
-    "custom/power",
+    "custom/power"
   ],
 
-  "hyprland/workspaces": {
+  "niri/workspaces": {
     "active-only": false,
     "all-outputs": true,
     "on-click": "activate",
     "format": "{icon}",
     "persistent-workspaces": {
-      "*": [1, 2, 3, 4, 5],
+      "*": [1, 2, 3, 4, 5]
     },
     "format-icons": {
-      "1": "", // Firefox
-      "2": "󰨞", // VS Code
-      "3": "", // Terminal
-      "4": "", // Spotify
-      "5": "", // Files
-      "default": "󰄯",
-    },
+      "1": "I", 
+      "2": "II", 
+      "3": "III", 
+      "4": "IV", 
+      "5": "V",
+      "6": "VI",
+      "7": "VII",
+      "8": "VIII",
+      "9": "IX",
+      "10": "X",
+      "default": "󰄯"
+    }
   },
   "clock": {
     "timezone": "Asia/Kolkata",
     "tooltip": false,
     "format": "{:%H:%M  -  %A, %d/%m/%y}",
-    "interval": 1,
-    "on-click": "qs -c ~/.config/quickshell/music msg music toggle",
+    "interval": 1
   },
 
   "network": {
@@ -48,30 +52,31 @@
     "format-disconnected": "󰤠 ",
     "interval": 5,
     "tooltip": false,
-    "on-click": "nm-connection-editor",
+    "on-click": "nm-connection-editor"
   },
 
   "pulseaudio": {
-    "format": "{icon} {volume}%",
+    "format": "{icon}  {volume}%",
     "format-muted": "",
     "format-icons": {
-      "default": ["", "", " "],
+      "default": ["", "", " "]
     },
     "tooltip": false,
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
   },
   "custom/power": {
     "format": " ",
     "on-click": "wlogout",
-    "tooltip": false,
+    "tooltip": false
   },
   "tray": {
     "icon-size": 18,
     "spacing": 5,
+    "show-passive-items": true,
     "icons": {
       "blueman": "bluetooth",
-      "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png",
-    },
+      "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+    }
   },
   "custom/notification": {
     "tooltip": true,
@@ -84,14 +89,14 @@
       "inhibited-notification": "󰂛",
       "inhibited-none": "󰪑",
       "dnd-inhibited-notification": "󰂛",
-      "dnd-inhibited-none": "󰪑",
+      "dnd-inhibited-none": "󰪑"
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
     "exec": "swaync-client -swb",
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
-    "escape": true,
+    "escape": true
   },
   "custom/mpd-prev": {
     "format": "󰒮",
@@ -105,7 +110,7 @@
     "state-icons": {
       "playing": "",
       "paused": "",
-      "stopped": "",
+      "stopped": ""
     },
     "max-length": 20,
     "ellipsis": true,
@@ -120,12 +125,12 @@
     "tooltip": false
   },
   "custom/menu": {
-    "format": "{}",
+    "format": "󰀘{icon}",
     "exec": "echo ; echo 󱓟 app launcher",
     "interval": 86400, // once every day
     "tooltip": false,
     "on-click": "pkill rofi || rofi -show drun",
-    "on-click-right": "~/.config/hypr/wppicker.sh",
+    "on-click-right": "pkill hyprpicker || hyprpicker -a" 
   }
 }
 

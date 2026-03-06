@@ -4,17 +4,18 @@
   "margin-left": 10,
   "margin-right": 10,
   "margin-top": 3,
-  "margin-bottom": -8,
+  "margin-bottom": 0,
 
   "modules-center": [
     "clock",
-    "hyprland/workspaces",
+    "niri/workspaces",
     "pulseaudio",
     "custom/notification",
-    "custom/power"
+    "custom/power",
+    "mpd"
   ],
 
-  "hyprland/workspaces": {
+  "niri/workspaces": {
     "active-only": false,
     "all-outputs": true,
     "on-click": "activate",
@@ -23,24 +24,24 @@
       "*": [1, 2, 3, 4, 5]
     },
     "format-icons": {
-	"1": "一",
-	"2": "二",
-	"3": "三",
-	"4": "四",
-	"5": "五",
-	"6": "六",
-	"7": "七",
-	"8": "八",
-	"9": "九",
-	"10": "十",
+	    "1": "一",
+	    "2": "二",
+	    "3": "三",
+	    "4": "四",
+	    "5": "五",
+	    "6": "六",
+	    "7": "七",
+	    "8": "八",
+	    "9": "九",
+	    "10": "十"
 }
   },
   "clock": {
     "timezone": "Asia/Kolkata",
-    "tooltip": false,
     "format": "{:%H:%M}",
-    "interval": 1,
-    "on-click": "qs -c ~/.config/quickshell/music msg music toggle",
+    "tooltip": true,
+    "tooltip-format": "{:%A %d %B %Y}",
+    "interval": 1
   },
 
   "network": {
@@ -63,7 +64,7 @@
   },
   "custom/power": {
     "format": " ",
-    "on-click": "wlogout",
+    "on-click": "~/.config/niku/scripts/bash/wlogout.sh",
     "tooltip": false
   },
   "tray": {
