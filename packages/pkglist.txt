@@ -70,3 +70,4 @@ wl-clipboard
 mpc
 mpd
 nm-connection-editor
+brave-bin
