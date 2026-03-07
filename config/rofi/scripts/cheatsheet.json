@@ -30,7 +30,7 @@
 
     "Window Navigation": [
       { "cmd": "MOD + Arrow Keys", "desc": "Move focus between windows" },
-      { "cmd": "MOD + TAB", "desc": "Cycle through open windows" },
+      { "cmd": "ALT + TAB", "desc": "Cycle through open windows" },
       { "cmd": "MOD + SHIFT + TAB", "desc": "Cycle through open windows"},
       { "cmd": "MOD + Drag (Left Mouse)", "desc": "Move window" },
       { "cmd": "MOD + Drag (Right Mouse)", "desc": "Resize window" }
@@ -43,10 +43,10 @@
       { "cmd": "MOD + J", "desc": "Next workspace" },
       { "cmd": "MOD + K", "desc": "Previous workspace" },
       { "cmd": "MOD + L", "desc": "Focus right window" },
-      { "cmd": "MOD + SHIFT + J", "desc": "Move to lower workspace" },
-      { "cmd": "MOD + SHIFT + k", "desc": "Move to upper workspace" },
-      { "cmd": "MOD + SHIFT + I", "desc": "Move all windows to upper workspace" },
-      { "cmd": "MOD + SHIFT + U", "desc": "Move all windows to lower workspace" },
+      { "cmd": "MOD + SHIFT + J", "desc": "Move window to pervious workspace" },
+      { "cmd": "MOD + SHIFT + k", "desc": "Move window to next workspace" },
+      { "cmd": "MOD + SHIFT + I", "desc": "Move all windows to pervious workspace" },
+      { "cmd": "MOD + SHIFT + U", "desc": "Move all windows to next workspace" },
       { "cmd": "MOD + Scroll", "desc": "Cycle through workspaces" }
     ],
 
@@ -68,15 +68,15 @@
     ],
 
     "Clipboard & Utilities": [
-      { "cmd": "MOD + V", "desc": "Open clipboard manager" }
+      { "cmd": "MOD + V", "desc": "Open clipboard manager" },
+      { "cmd": "MOD + Excape", "desc": "Open powermenu" }
     ],
 
     "System & Theming": [
       { "cmd": "MOD + SHIFT + W", "desc": "Open wallpaper picker" },
       { "cmd": "MOD + SHIFT + S", "desc": "Open system launcher" },
       { "cmd": "MOD + SHIFT + C", "desc": "Change color scheme and mode" },
-      { "cmd": "MOD + SHIFT + B", "desc": "Switch Waybar theme" },
-      { "cmd": "MOD + Excape", "desc": "Open powermenu" }
+      { "cmd": "MOD + SHIFT + B", "desc": "Switch Waybar theme" }
     ],
 
     "Media & Brightness": [

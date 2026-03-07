@@ -35,6 +35,9 @@ input_path = '~/.config/niku/Color-Generator/matugen/templates/terminal/kitty-co
 output_path = '~/.config/kitty/colors.conf'
 post_hook = 'pkill -USR1 kitty'
 
+[templates.swaylock]
+input_path = '~/.config/niku/Color-Generator/matugen/templates/swaylock'
+output_path = '~/.config/swaylock/config'
 
 [templates.gtk3]
 input_path = '~/.config/niku/Color-Generator/matugen/templates/gtk3.css'
@@ -59,7 +62,6 @@ output_path = '~/.config/spicetify/Themes/niku/color.ini'
 # post_hook = '~/.config/niku/Color-Generator/matugen/scripts/spice.sh'
 
 
-[templates.pywalfox]
-input_path = '~/.config/niku/Color-Generator/matugen/templates/pywalfox.json'
-output_path = '~/.cache/wal/colors.json'
-post_hook = 'pywalfox update'
+# [templates.obs-studio]
+# input_path = '~/.config/niku/Color-Generator/matugen/templates/obs-studio'
+# output_path = '~/.config/obs-studio/themes/niku.'
