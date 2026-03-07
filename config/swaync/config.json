@@ -79,7 +79,7 @@
         {
           "label": "󰐥",
           "type": "button",
-          "command": "bash -c $HOME/.config/niku/scripts/bash/system-utils/Wlogout.sh"
+          "command": "$HOME/.config/niku/scripts/bash/system-utils/Wlogout.sh"
         },
         {
           "label": "󰌾",
