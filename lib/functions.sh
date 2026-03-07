@@ -310,6 +310,56 @@ copy_configs() {
 
 }
 
+########################################
+# Font Installation
+########################################
+
+install_fonts() {
+
+    section "Installing fonts"
+
+    if [[ ! -d "$FONT_SOURCE" ]]; then
+        warn "Font directory not found: $FONT_SOURCE"
+        return
+    fi
+
+    mkdir -p "$FONT_DEST"
+
+    font_count=0
+
+    for font in "$FONT_SOURCE"/*
+    do
+
+        font_name="$(basename "$font")"
+        target="$FONT_DEST/$font_name"
+
+        if [[ -f "$target" ]]; then
+            warn "Font already exists: $font_name"
+            continue
+        fi
+
+        cp "$font" "$target"
+
+        success "Installed font: $font_name"
+
+        ((font_count++))
+
+    done
+
+    if [[ "$font_count" -gt 0 ]]; then
+
+        section "Updating font cache"
+
+        fc-cache -fv >/dev/null
+
+        success "Font cache updated"
+
+    else
+        info "No new fonts installed"
+    fi
+
+}
+
 
 ########################################
 # Full Installer
@@ -324,6 +374,7 @@ full_install() {
 
     install_packages
     link_configs
+    install_fonts
 
     success "Full installation finished"
 
