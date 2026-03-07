@@ -62,11 +62,11 @@
       "default": ["", "", " "]
     },
     "tooltip": false,
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    "on-click": "swayosd-client --output-volume mute-toggle"
   },
   "custom/power": {
     "format": " ",
-    "on-click": "wlogout",
+    "on-click": "~/.config/niku/scripts/bash/wlogout.sh",
     "tooltip": false
   },
   "tray": {

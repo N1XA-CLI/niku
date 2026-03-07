@@ -31,8 +31,7 @@
     "timezone": "Asia/Kolkata",
     "tooltip": false,
     "format": "   {:%H:%M}",
-    "interval": 1,
-    "on-click": "qs -c ~/.config/quickshell/music msg music toggle"
+    "interval": 1
   },
 
   "network": {
@@ -51,7 +50,7 @@
       "default": ["", "", " "]
     },
     "tooltip": false,
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    "on-click": "swayosd-client --output-volume mute-toggle"
   },
   "custom/power": {
     "format": " ",

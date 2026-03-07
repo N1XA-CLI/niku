@@ -14,7 +14,11 @@
     "modules-center": ["niri/workspaces"],
     "modules-right": [ "tray", "mpris","pulseaudio"],
     "pulseaudio": {
-    	"format": "{volume}%"
+    	"format": "{volume}%",
+      "format-muted": " ",
+      "on-scrool-up": "swayosd-client --output-volume +1",
+      "on-scrool-down": "swayosd-client --output-volume -1",
+      "on-click": "swayosd-client --output-volume mute-toggle"
     },
     "backlight": {
     "format": "{percent}%",

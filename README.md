@@ -19,14 +19,16 @@
 ---
 <p align="center">
   <a href="#installation">Installation</a> •
-  <a href="#assets">assets</a> •
+  <a href="#assets">Assets</a> •
   <a href="#videos">Videos</a> •
+  <a href="#keybinds">Keybinds</a> •
+  <a href="#customize">Customize</a> •
   <a href="#credits">Credits</a>
 </p>
 
 ---
 
-## assets
+## Assets
 
 <!-- Hero shots (large) -->
 <p align="center">
@@ -102,7 +104,7 @@ You can find **Niku video demos**, looks, and workflow showcases on my Reddit pr
 - 🔤 Fonts: NerdFont
 - ⚡ Clean, modular dotfiles
 - 🧠 Beginner-friendly structure
-- Complete Desktop Environment
+- 💖 Complete Desktop Environment
 
 ---
 
@@ -131,6 +133,7 @@ All dependencies and configs are handled **inside the installer**.
 ```bash
 git clone https://github.com/N1XA-CLI/niku.git ~/.niku
 cd ~/.niku # Do not delete this folder
+rm -rf .git # Remove the .git for Customizing.
 ```
 
 2. Make the installer executable:
@@ -145,12 +148,35 @@ chmod +x install.sh
 ./install.sh
 ```
 
-* Creates a backup of current config(**only config that it creates symlink**).
+* Creates a backup of current config (**only config that it creates symlink**).
 * It will **check and install missing packages** via `yay`.
-* Creates **Symlink**.
+* Creates **Symlink** for **Ease**.
 
 
 4. Restart your session or apps if needed to see theme changes.
+
+---
+
+## Keybinds
+
+```bash
+Mod + Enter           # Open Terminal (Kitty)
+Mod + Shift + Enter   # Open Floating Terminal (Kitty)
+Mod + A               # Application Launcher
+Mod + B               # Open Browser (Brave)
+Mod + C               # Open Code Editor (Neovim)
+Mod + E               # Open File Manager (Yazi)
+Mod + N               # Notification Center (Swaync)
+Mod + M               # Open Music Player (Spotify)
+Mod + Grave           # Keybinds Cheatsheet (Grave below Escape)
+Mod + Shift + S       # System Launcher (Quick access to features)
+```
+
+---
+
+## Customize
+
+ Customizing is really easy. You just have to edit the files in ```~/.niku/config/``` if you choose create symlink or in ```~/.config/```.
 
 ---
 
