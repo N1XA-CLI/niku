@@ -176,7 +176,7 @@ Mod + Shift + S       # System Launcher (Quick access to features)
 
 ## Customize
 
- Customizing is really easy. You just have to edit the files in ```~/.niku/config/``` if you choose create symlink or in ```~/.config/```.
+ Customizing is really easy. You just have to edit the files in ```~/.config/```.
 
 ---
 
@@ -209,8 +209,7 @@ Mod + Shift + S       # System Launcher (Quick access to features)
 ## Credits
 
 - [***Shreyas***](https://github.com/shreyas-sha3) the base of the rice
-- [***Aadritobasu***](https://github.com/aadritobasu/) for configs and 
-inspiration.
+- [***Aadritobasu***](https://github.com/aadritobasu/) for configs.
 - [***Noctalia***](https://github.com/noctalia-dev) for Color Scheme and mode generator
 ---
 
