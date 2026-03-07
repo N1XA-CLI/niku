@@ -360,6 +360,64 @@ install_fonts() {
 
 }
 
+<<<<<<< HEAD
+=======
+########################################
+# Wallpaper Installation
+########################################
+
+install_wallpapers() {
+
+    section "Wallpaper Setup"
+
+    read -rp "Do you want to install wallpapers? [y/N]: " answer
+
+    if [[ "$answer" != "y" && "$answer" != "Y" ]]; then
+
+        info "Skipping wallpaper installation"
+
+        info "Place your wallpapers in:"
+        echo "$WALLPAPER_DIR"
+
+        return
+
+    fi
+
+    ensure_git
+
+    mkdir -p "$HOME/Pictures"
+
+    if [[ -d "$WALLPAPER_DIR/.git" ]]; then
+
+        info "Wallpaper repository already exists"
+        info "Updating wallpapers..."
+
+        git -C "$WALLPAPER_DIR" pull
+
+        success "Wallpapers updated"
+
+        return
+
+    fi
+
+    if [[ -d "$WALLPAPER_DIR" ]]; then
+
+        warn "Directory already exists: $WALLPAPER_DIR"
+        warn "Skipping clone to avoid overwriting files"
+
+        return
+
+    fi
+
+    section "Cloning wallpaper repository"
+
+    git clone "$WALLPAPER_REPO" "$WALLPAPER_DIR"
+
+    success "Wallpapers installed to $WALLPAPER_DIR"
+
+}
+
+>>>>>>> e4058fb (Updated)
 
 ########################################
 # Full Installer
@@ -375,6 +433,10 @@ full_install() {
     install_packages
     link_configs
     install_fonts
+<<<<<<< HEAD
+=======
+    install_wallpapers
+>>>>>>> e4058fb (Updated)
 
     success "Full installation finished"
 

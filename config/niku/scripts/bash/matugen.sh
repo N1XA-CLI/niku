@@ -15,7 +15,7 @@ COLOR_MODE=$(ls "$HOME/.config/niku/Color-Generator/command/current_command/mode
 # If no color mode present
 if [ -z "$COLOR_MODE" ]; then
   # create a mode 
-  COLOR_MODE="both"
+  COLOR_MODE="dark"
 fi
 
 # If no color scheme present
