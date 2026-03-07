@@ -23,12 +23,11 @@ matugen
 minizip
 neovim
 networkmanager
-<<<<<<< HEAD
+xdg-desktop-portal-gnome
+xdg-desktop-portal-gtk
+xdg-desktop-portal-wlr
 niri
-=======
->>>>>>> e4058fb (Updated)
 noto-fonts-emoji
-nvim-lazy
 nwg-look
 otf-font-awesome
 parallel
@@ -39,7 +38,6 @@ pipewire-jack
 pipewire-pulse
 pulsemixer
 python-lxml
-python-pandas
 python-pillow
 python-scipy
 rofi
@@ -61,18 +59,9 @@ waybar
 wireplumber
 wl-clip-persist
 wlogout
-xdg-desktop-portal-gnome
-xdg-desktop-portal-gtk
-xdg-desktop-portal-wlr
-<<<<<<< HEAD
-xwayland-satellite
-yazi
 zen-browser-bin
-=======
-niri
 xwayland-satellite
 yazi
->>>>>>> e4058fb (Updated)
 zoxide
 wlsunset
 wl-clipboard

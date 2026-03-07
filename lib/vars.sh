@@ -34,7 +34,7 @@ PKG_FILE="$SCRIPT_DIR/packages/pkglist.txt"
 # Fonts
 ########################################
 
-FONT_SOURCE="$HOME/.niku/fonts"
+FONT_SOURCE="$SCRIPT_DIR/fonts"
 FONT_DEST="$HOME/.local/share/fonts/niku"
 
 

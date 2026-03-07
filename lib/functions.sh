@@ -164,68 +164,51 @@ install_packages() {
         return
     fi
 
-    mapfile -t packages < "$PKG_FILE"
+    # Read package list and remove duplicates + comments
+    mapfile -t packages < <(grep -vE '^\s*#|^\s*$' "$PKG_FILE" | sort -u)
 
-    repo_packages=()
-    aur_packages=()
+    missing_packages=()
+
+    ########################################
+    # Detect packages not installed
+    ########################################
 
     for pkg in "${packages[@]}"
     do
-        if pacman -Si "$pkg" &>/dev/null; then
-            repo_packages+=("$pkg")
-        else
-            aur_packages+=("$pkg")
+        if ! pacman -Qi "$pkg" &>/dev/null; then
+            missing_packages+=("$pkg")
         fi
     done
 
-
     ########################################
-    # Install repo packages
+    # If everything is installed
     ########################################
 
-    if [[ ${#repo_packages[@]} -gt 0 ]]; then
-
-        section "Installing repository packages"
-
-        sudo pacman -S --needed --noconfirm "${repo_packages[@]}"
-
-        success "Repository packages installed"
-
+    if [[ ${#missing_packages[@]} -eq 0 ]]; then
+        success "All packages are already installed"
+        return
     fi
 
+    ########################################
+    # Show packages to install
+    ########################################
+
+    section "Packages to install"
+
+    for pkg in "${missing_packages[@]}"
+    do
+        echo " - $pkg"
+    done
 
     ########################################
-    # Install AUR packages in parallel
+    # Install packages
     ########################################
 
-    if [[ ${#aur_packages[@]} -gt 0 ]]; then
+    section "Installing packages"
 
-        section "Installing AUR packages"
+    "$AUR_HELPER" -S --needed --noconfirm "${missing_packages[@]}"
 
-        max_jobs=4
-        running_jobs=0
-
-        for pkg in "${aur_packages[@]}"
-        do
-
-            echo "Installing $pkg"
-
-            "$AUR_HELPER" -S --needed --noconfirm "$pkg" &
-
-            ((running_jobs++))
-
-            if (( running_jobs >= max_jobs )); then
-                wait -n
-                ((running_jobs--))
-            fi
-
-        done
-
-        wait
-
-        success "AUR packages installed"
-
-    fi
+    success "Package installation finished"
 
 }
 
@@ -325,38 +308,18 @@ install_fonts() {
 
     mkdir -p "$FONT_DEST"
 
-    font_count=0
+    # Sync fonts recursively
+    rsync -av --include='*/' \
+        --include='*.ttf' \
+        --include='*.otf' \
+        --include='*.ttc' \
+        --exclude='*' \
+        "$FONT_SOURCE/" "$FONT_DEST/"
 
-    for font in "$FONT_SOURCE"/*
-    do
+    section "Updating font cache"
+    fc-cache -fv >/dev/null
 
-        font_name="$(basename "$font")"
-        target="$FONT_DEST/$font_name"
-
-        if [[ -f "$target" ]]; then
-            warn "Font already exists: $font_name"
-            continue
-        fi
-
-        cp "$font" "$target"
-
-        success "Installed font: $font_name"
-
-        ((font_count++))
-
-    done
-
-    if [[ "$font_count" -gt 0 ]]; then
-
-        section "Updating font cache"
-
-        fc-cache -fv >/dev/null
-
-        success "Font cache updated"
-
-    else
-        info "No new fonts installed"
-    fi
+    success "Fonts installed successfully"
 
 }
 
@@ -372,14 +335,9 @@ install_wallpapers() {
     read -rp "Do you want to install wallpapers? [y/N]: " answer
 
     if [[ "$answer" != "y" && "$answer" != "Y" ]]; then
-
         info "Skipping wallpaper installation"
-
-        info "Place your wallpapers in:"
-        echo "$WALLPAPER_DIR"
-
+        info "Place wallpapers in: $WALLPAPER_DIR"
         return
-
     fi
 
     ensure_git
@@ -387,35 +345,18 @@ install_wallpapers() {
     mkdir -p "$HOME/Pictures"
 
     if [[ -d "$WALLPAPER_DIR/.git" ]]; then
-
-        info "Wallpaper repository already exists"
         info "Updating wallpapers..."
-
         git -C "$WALLPAPER_DIR" pull
-
         success "Wallpapers updated"
-
         return
-
     fi
 
-    if [[ -d "$WALLPAPER_DIR" ]]; then
-
-        warn "Directory already exists: $WALLPAPER_DIR"
-        warn "Skipping clone to avoid overwriting files"
-
-        return
-
-    fi
-
-    section "Cloning wallpaper repository"
+    section "Installing wallpapers"
 
     git clone "$WALLPAPER_REPO" "$WALLPAPER_DIR"
 
     success "Wallpapers installed to $WALLPAPER_DIR"
-
 }
-
 
 ########################################
 # Full Installer
@@ -435,5 +376,26 @@ full_install() {
 
 
     success "Full installation finished"
+
+}
+
+########################################
+# Installation completion message
+########################################
+
+installation_complete() {
+
+    section "Installation Complete"
+
+    success "NiriNiku installation finished."
+
+    info "Config backups: $BACKUP_DIR"
+    info "Installation log: $LOG_FILE"
+
+    echo
+    warn "A reboot is recommended before starting Niri."
+
+    echo
+    info "Enjoy your new setup!"
 
 }

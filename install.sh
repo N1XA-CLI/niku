@@ -53,18 +53,22 @@ main() {
 
             1)
                 full_install
+                installation_complete
                 ;;
 
             2)
                 install_packages
+                installation_complete
                 ;;
 
             3)
                 link_configs
+                installation_complete
                 ;;
 
             4)
                 copy_configs
+                installation_complete
                 ;;
 
             5)
@@ -74,15 +78,18 @@ main() {
 
             *)
                 warn "Invalid option"
+                continue
                 ;;
         esac
 
         echo
-        read -rp "Press Enter to return to menu..."
-        clear
-        print_banner
+        read -rp "Return to menu? [Y/n]: " answer
+
+        if [[ "$answer" =~ ^[Nn]$ ]]; then
+            info "Exiting installer"
+            exit 0
+        fi
 
     done
 }
-
 main
