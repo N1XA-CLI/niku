@@ -18,9 +18,9 @@
 
 ---
 <p align="center">
-  <a href="#installation">Installation</a> •
   <a href="#assets">Assets</a> •
   <a href="#videos">Videos</a> •
+  <a href="#installation">Installation</a> •
   <a href="#keybinds">Keybinds</a> •
   <a href="#customize">Customize</a> •
   <a href="#credits">Credits</a>
@@ -128,6 +128,35 @@ All dependencies and configs are handled **inside the installer**.
 
 ## Installation
 
+### You have two option for installtion 
+ 
+---
+
+#### Option 1 (recommended)
+1. Fork this repository.
+
+2. Then Clone this repository.
+
+```bash
+git clone https://github.com/<USER_NAME>/niku.git ~/.niku
+```
+
+3. cd into the directory and make the installer executable:
+
+```bash
+cd ~/.niku
+chmod +x install.sh
+```
+4. Run the installer:
+
+```bash
+./install.sh
+```
+
+---
+
+
+#### Option 2
 1. Clone this repository:
 
 ```bash
@@ -148,7 +177,7 @@ chmod +x install.sh
 ./install.sh
 ```
 
-* Creates a backup of current config (**only config that it creates symlink**).
+* Creates a backup of current config (**only config that it creates symlink or copies**).
 * It will **check and install missing packages** via `yay`.
 * Creates **Symlink** for **Ease**.
 
@@ -197,6 +226,7 @@ Mod + Shift + S       # System Launcher (Quick access to features)
 ├── nwg-look        # Gtk Manager
 ├── rofi            # Launcher
 ├── spicetify       # Spotify Customiser
+├── swaylock        # Screen Locker
 ├── swaync          # Notification Center
 ├── waybar          # Status Bar
 ├── wlogout         # Powermenu

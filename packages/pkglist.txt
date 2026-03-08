@@ -59,7 +59,6 @@ waybar
 wireplumber
 wl-clip-persist
 wlogout
-zen-browser-bin
 xwayland-satellite
 yazi
 zoxide
@@ -69,3 +68,8 @@ mpc
 mpd
 nm-connection-editor
 brave-bin
+tumbler
+ffmpegthumbnailer
+libinput-tools
+libinput
+hyprlock

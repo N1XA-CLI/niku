@@ -387,7 +387,7 @@ installation_complete() {
 
     section "Installation Complete"
 
-    success "NiriNiku installation finished."
+    success "Niku installation finished."
 
     info "Config backups: $BACKUP_DIR"
     info "Installation log: $LOG_FILE"
