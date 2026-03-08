@@ -8,6 +8,11 @@ output_path = '~/.config/niri/colors/niri-colors.kdl'
 post_hook = 'niri msg action load-config-file' # Not Important but given so everything goes smoothly.
 
 
+[templates.hyprlock]
+input_path = '~/.config/niku/Color-Generator/matugen/templates/hyprlock-color.conf'
+output_path = '~/.config/niku/configs/hypr/colors/hyprlock-color.conf'
+
+
 [templates.btop]
 input_path = '~/.config/niku/Color-Generator/matugen/templates/btop-colors.theme'
 output_path = '~/.config/btop/themes/btop-colors.theme'

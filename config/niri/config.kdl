@@ -196,7 +196,7 @@ spawn-sh-at-startup     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent
 spawn-at-startup        "wlsunset"
 spawn-at-startup        "swww-daemon"
 spawn-at-startup        "waybar"
-
+spawn-at-startup        "stasis"
 spawn-at-startup        "swaync"
 spawn-at-startup        "playerctld"
 spawn-at-startup        "swayosd-server"

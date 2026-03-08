@@ -20,7 +20,6 @@
 
     "Window Controls": [
       { "cmd": "MOD + Q", "desc": "Close active window" },
-      { "cmd": "MOD + ALT + Delete", "desc": "Exit Niri session" },
       { "cmd": "MOD + F", "desc": "Toggle fullscreen" },
       { "cmd": "MOD + SPACE", "desc": "Toggle floating mode" },
       { "cmd": "ALT + TAB", "desc": "Cycle through windows" },
@@ -29,29 +28,29 @@
     ],
 
     "Window Navigation": [
-      { "cmd": "MOD + Arrow Keys", "desc": "Move focus between windows" },
-      { "cmd": "ALT + TAB", "desc": "Cycle through open windows" },
-      { "cmd": "MOD + SHIFT + TAB", "desc": "Cycle through open windows"},
-      { "cmd": "MOD + Drag (Left Mouse)", "desc": "Move window" },
-      { "cmd": "MOD + Drag (Right Mouse)", "desc": "Resize window" }
-    ],
-
-    "Workspace Management": [
-      { "cmd": "MOD + 1 → 0", "desc": "Switch workspace (1-10)" },
-      { "cmd": "MOD + SHIFT + 1 → 0", "desc": "Move to workspace (1-10)" },
       { "cmd": "MOD + H", "desc": "Focus left window" },
       { "cmd": "MOD + J", "desc": "Next workspace" },
       { "cmd": "MOD + K", "desc": "Previous workspace" },
       { "cmd": "MOD + L", "desc": "Focus right window" },
       { "cmd": "MOD + SHIFT + J", "desc": "Move window to pervious workspace" },
       { "cmd": "MOD + SHIFT + k", "desc": "Move window to next workspace" },
+      { "cmd": "MOD + Arrow Keys", "desc": "Move focus between windows" },
+      { "cmd": "ALT + TAB", "desc": "Cycle through open windows" },
+      { "cmd": "MOD + SHIFT + TAB", "desc": "Cycle through open windows"},
+      { "cmd": "MOD + SHIFT + 1 → 0", "desc": "Move to workspace (1-10)" },
+      { "cmd": "MOD + Drag (Left Mouse)", "desc": "Move window" },
+      { "cmd": "MOD + Drag (Right Mouse)", "desc": "Resize window" }
+    ],
+
+    "Workspace Management": [
+      { "cmd": "MOD + 1 → 0", "desc": "Switch workspace (1-10)" }, 
       { "cmd": "MOD + SHIFT + I", "desc": "Move all windows to pervious workspace" },
       { "cmd": "MOD + SHIFT + U", "desc": "Move all windows to next workspace" },
       { "cmd": "MOD + Scroll", "desc": "Cycle through workspaces" }
     ],
 
     "Window Layout & Movement": [
-      { "cmd": "MOD + CTRL + Arrows", "desc": "Move window direction" },
+      { "cmd": "MOD + CTRL + Arrows", "desc": "Move window horizontally" },
       { "cmd": "MOD + ALT + Arrows", "desc": "Swap window direction" },
       { "cmd": "MOD + SHIFT + Arrows", "desc": "Resize window" }
     ],
@@ -76,7 +75,8 @@
       { "cmd": "MOD + SHIFT + W", "desc": "Open wallpaper picker" },
       { "cmd": "MOD + SHIFT + S", "desc": "Open system launcher" },
       { "cmd": "MOD + SHIFT + C", "desc": "Change color scheme and mode" },
-      { "cmd": "MOD + SHIFT + B", "desc": "Switch Waybar theme" }
+      { "cmd": "MOD + SHIFT + B", "desc": "Switch Waybar theme" },
+      { "cmd": "MOD + ALT + Delete", "desc": "Exit Niri session" }
     ],
 
     "Media & Brightness": [

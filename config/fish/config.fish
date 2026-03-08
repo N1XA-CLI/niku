@@ -154,6 +154,7 @@ alias ......='cd ../../../../..'
 alias gitpkg='pacman -Q | grep -i "\-git" | wc -l'
 alias update='sudo pacman -Syu'
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
+alias pamcan='pacman'
 
 # Shortcuts
 alias apt='man pacman'
@@ -161,12 +162,16 @@ alias apt-get='man pacman'
 alias please='sudo'
 alias jctl="journalctl -p 3 -xb"
 alias ff='fastfetch'
+alias py='python'
 alias q='exit'
 alias h='history'
-alias c='clear'
 alias cd='z '
 alias fd='zi '
-# alias nvim='lvim'
+alias cpkg="sudo pacman -Rns $(pacman -Qtdq)"
+alias cdep="yay -Si " #used to check dependence of any package
+# clear the screen and no scroll history
+#alias clear="printf '\033[2J\033[3J\033[1;1H'"
+alias clear="clear && printf '\e[3J'" 
 
 # Git shortcuts
 alias gs='git status'
@@ -180,13 +185,15 @@ alias gpull='git pull'
 
 # System control
 alias wifi='nmtui'
-alias i='yay -Sy'
-alias u='yay -Syu'
+alias i='yay -Sy --needed --noconfirm '
+alias u='notify-send "Upgrading System" & yay -Syu --noconfirm '
 alias s='yay -Ss'
 alias lsearch='yay -Qs'
 alias rc='yay -Rns'
+alias r='yay -R --noconfirm '
 alias shutdown='systemctl poweroff'
 alias du='dust'
+alias clean-dns='sudo systemd-resolve --flush-caches'
 
 ###################
 ### Environment ###

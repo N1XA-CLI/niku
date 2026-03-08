@@ -4,20 +4,20 @@ clock
 screenshot
 effect-blur=15x15
 effect-vignette=1:1
-color=#1a2224
+color=#181210
 font="Google Sans Flex"
 indicator
 indicator-radius=200
 indicator-thickness=20
 line-color=
-ring-color=#67e4e4
+ring-color=#ffb692
 inside-color=1f1d2e
 key-hl-color=eb6f92
 separator-color=00000000
 text-color=e0def4
-text-caps-lock-color=#fd4663
+text-caps-lock-color=#ffb4ab
 line-ver-color=eb6f92
-ring-ver-color=#182525
+ring-ver-color=#562000
 inside-ver-color=1f1d2e
 text-ver-color=e0def4
 ring-wrong-color=31748f

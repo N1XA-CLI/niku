@@ -5,7 +5,7 @@ THEMES_DIR="$WAYBAR_DIR/themes"
 CURRENT_THEME_FILE="$WAYBAR_DIR/.current_theme"
 
 # Init state
-[ -f "$CURRENT_THEME_FILE" ] || echo "default" > "$CURRENT_THEME_FILE:wq"
+[ -f "$CURRENT_THEME_FILE" ] || echo "default" > "$CURRENT_THEME_FILE"
 
 # Get themes
 THEMES=$(ls "$THEMES_DIR")
@@ -28,6 +28,7 @@ echo "$SELECTED" > "$CURRENT_THEME_FILE"
 
 # Restart Waybar
 pkill waybar
+sleep 0.2
 waybar & disown
 
 notify-send "Waybar Theme" "Switched to $SELECTED"

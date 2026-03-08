@@ -138,7 +138,7 @@ All dependencies and configs are handled **inside the installer**.
 2. Then Clone this repository.
 
 ```bash
-git clone https://github.com/<USER_NAME>/niku.git ~/.niku
+git clone --depth 1 https://github.com/<USER_NAME>/niku.git ~/.niku
 ```
 
 3. cd into the directory and make the installer executable:
@@ -160,7 +160,7 @@ chmod +x install.sh
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/N1XA-CLI/niku.git ~/.niku
+git clone --depth 1 https://github.com/N1XA-CLI/niku.git ~/.niku
 cd ~/.niku # Do not delete this folder
 rm -rf .git # Remove the .git for Customizing.
 ```
