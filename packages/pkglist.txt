@@ -70,3 +70,6 @@ nm-connection-editor
 brave-bin
 tumbler
 ffmpegthumbnailer
+libinput-tools
+libinput
+hyprlock
