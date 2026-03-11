@@ -200,6 +200,7 @@ spawn-at-startup        "stasis"
 spawn-at-startup        "swaync"
 spawn-at-startup        "playerctld"
 spawn-at-startup        "swayosd-server"
+spawn-at-startup        "activate-linux"
 
 
 // // // // // // // // // // //
@@ -213,13 +214,14 @@ binds {
     Mod+Escape 				                  hotkey-overlay-title="Toggle Powermenu"             { spawn-sh "pkill wlogout || ~/.config/niku/scripts/bash/wlogout.sh"; }
     Mod+A                               hotkey-overlay-title="Toggle an Application: Rofi"  { spawn-sh "pkill rofi || rofi -show drun"; }
     Mod+E                               hotkey-overlay-title="Open floating terminal File Manager"   { spawn-sh "kitty --app-id=floatingterm yazi"; }
-    Alt+L 			                        hotkey-overlay-title="Lock Screen: gtklock"         { spawn-sh "gtklock"; }
+    Alt+L 			                        hotkey-overlay-title="Lock Screen: hyprlock"         { spawn-sh "~/.config/niku/scripts/bash/hyprlock.sh"; }
     Mod+Q 				                      repeat=false                                        { close-window; }
     Mod+B                               hotkey-overlay-title="Open Brave Browser"           { spawn-sh "brave"; }
     Mod+C                               hotkey-overlay-title="Open nvim in terminal"        { spawn-sh "kitty nvim"; } 
     Mod+N                               hotkey-overlay-title="Toggle notification center"   { spawn-sh "swaync-client -t -sw"; }
     Mod+M                               hotkey-overlay-title="Open Spotify"   { spawn-sh "gtk4-launch spotify-adblock"; }
     Mod+V                               hotkey-overlay-title="Open clipboard hisotry"       { spawn-sh "pkill rofi || ~/.config/niku/scripts/bash/clip.sh"; }
+        
     Mod+grave                           hotkey-overlay-title="Open cheatsheet"              { spawn-sh "pkill rofi || ~/.config/niku/scripts/bash/key.sh"; }
     Mod+Shift+N                         hotkey-overlay-title="Toggle Night Mode"            { spawn-sh "killall wlsunset || wlsunset -t 4000 -g 0.8"; }
     Mod+Shift+S                         hotkey-overlay-title="Toggle System launcher"       { spawn-sh "killall rofi || ~/.config/niku/scripts/bash/syslauncher.sh"; }
