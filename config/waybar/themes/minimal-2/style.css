@@ -8,7 +8,7 @@
 window#waybar {
     border-bottom: 1px solid #181825;
     border-radius: 10px;
-    background: alpha(@surface,1);
+    background-color: alpha(@surface,1);
 }
 
 #mpris,

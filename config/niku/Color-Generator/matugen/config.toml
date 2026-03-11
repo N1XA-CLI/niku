@@ -35,6 +35,11 @@ output_path = '~/.config/cava/config'
 post_hook = "pkill -USR1 cava"
 
 
+[templates.kwybar]
+input_path = '~/.config/niku/Color-Generator/matugen/templates/kwybars-colors.toml'
+output_path = '~/.config/kwybars/colors.toml'
+
+
 [templates.kitty]
 input_path = '~/.config/niku/Color-Generator/matugen/templates/terminal/kitty-colors.conf'
 output_path = '~/.config/kitty/colors.conf'
