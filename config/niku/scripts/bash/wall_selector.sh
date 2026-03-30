@@ -28,11 +28,11 @@ SELECTED_WALL=$(
 
 SELECTED_PATH="$WALL_DIR/$SELECTED_WALL"
 
-# --- Apply wallpaper only using swww ---
+# --- Apply wallpaper only using awww ---
 notify-send "Applying Wallpaper" --icon="$HOME/.config/niku/Color-Generator/matugen/assets/paint-brush.webp" & 
 ln -sf "$SELECTED_PATH" "$SYMLINK_PATH"
 
-if swww img "$SELECTED_PATH" --transition-type any --transition-fps 60; then
+if awww img "$SELECTED_PATH" --transition-type any --transition-fps 60; then
   "$HOME/.config/niku/scripts/bash/matugen.sh"
   echo "✅ Applied wallpaper: $SELECTED_PATH"
 fi

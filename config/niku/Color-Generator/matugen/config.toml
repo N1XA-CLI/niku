@@ -69,7 +69,7 @@ output_path = '~/.config/yazi/flavors/niku.toml'
 [templates.spicetify]
 input_path = '~/.config/niku/Color-Generator/matugen/templates/spicetify.ini'
 output_path = '~/.config/spicetify/Themes/niku/color.ini'
-# post_hook = '~/.config/niku/Color-Generator/matugen/scripts/spice.sh'
+# post_hook = 'spicetify apply'
 
 
 # [templates.obs-studio]
