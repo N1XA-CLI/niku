@@ -39,9 +39,7 @@ layout {
     }
     border {
         width 2.2
-        active-color "#d8dee9"
-        inactive-color "#434c5e"
-        urgent-color "#bf616a"
+        // Colors configure by colors.kdl
     }
 }
 overview {
@@ -77,7 +75,7 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 blur {
   on
-  passes 4 
+  passes 5 
   noise 0.01
 }
 
@@ -86,7 +84,7 @@ blur {
 // // // // // // // // // //
 
 layer-rule {
-    match namespace="swww-daemon" // Show wallpaper in overview too!
+    match namespace="awww-daemon" // Show wallpaper in overview too!
     place-within-backdrop true
 }
 layer-rule { 
@@ -112,7 +110,7 @@ window-rule {
     background-effect {
         blur true
         xray true
-        saturation 2
+        saturation 1
     }
 }
 window-rule {
@@ -188,13 +186,41 @@ spawn-sh-at-startup     "wl-clip-persist --clipboard regular"
 spawn-sh-at-startup     "wl-clip-persist --clipboard primary"
 spawn-sh-at-startup     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &"
 spawn-at-startup        "wlsunset"
-spawn-at-startup        "swww-daemon"
+spawn-at-startup        "awww-daemon"
 spawn-at-startup        "waybar"
 spawn-at-startup        "swaync"
 spawn-at-startup        "playerctld"
 spawn-at-startup        "swayosd-server"
-spawn-at-startup        "activate-linux"
 
+
+// // // // // // // // // // // //
+// // //  Cycle Window  // // // //
+// // // // // // // // // // // //
+
+recent-windows {
+    // off
+    debounce-ms 750
+
+    open-delay-ms 150
+
+    highlight {
+        active-color "#999999ff"
+        urgent-color "#ff9999ff"
+        padding 30
+        corner-radius 0
+    }
+
+    previews {
+        max-height 480
+        max-scale 0.5
+    }
+
+    binds {
+        Alt+Tab         { next-window; }
+        Alt+Shift+Tab   { previous-window; }
+
+    }
+}
 
 // Do not remove it.
 include "./colors/niri-colors.kdl"

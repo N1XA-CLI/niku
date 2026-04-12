@@ -185,12 +185,12 @@ alias gpull='git pull'
 
 # System control
 alias wifi='nmtui'
-alias i='yay -Sy --needed --noconfirm '
-alias u='notify-send "Upgrading System" & yay -Syu --noconfirm '
+alias i='yay -Sy --needed  '
+alias u='notify-send "Upgrading System" & yay -Syu  '
 alias s='yay -Ss'
 alias lsearch='yay -Qs'
 alias rc='yay -Rns'
-alias r='yay -R --noconfirm '
+alias r='yay -R  '
 alias shutdown='systemctl poweroff'
 alias du='dust'
 alias clean-dns='sudo systemd-resolve --flush-caches'
@@ -204,3 +204,5 @@ set -gx SHELL_CONFIG_DIR $HOME/.config
 #set -gx CARGO_HOME $HOME/.cargo
 set -gx PATH $CARGO_HOME/bin $PATH
 zoxide init fish | source
+
+fish_add_path /home/levi/.spicetify

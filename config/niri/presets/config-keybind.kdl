@@ -39,9 +39,7 @@ layout {
     }
     border {
         width 2.2
-        active-color "#d8dee9"
-        inactive-color "#434c5e"
-        urgent-color "#bf616a"
+        // Colors configure by colors.kdl
     }
 }
 overview {
