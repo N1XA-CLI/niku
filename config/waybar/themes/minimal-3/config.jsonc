@@ -9,7 +9,7 @@
   "margin-top": 0,
   "margin-bottom": 0,
   "margin-left": 0,
-  "margin-right": -4,
+  "margin-right": 0,
     "modules-left": ["clock"],
     "modules-center": ["niri/workspaces"],
     "modules-right": [ "tray", "mpris","pulseaudio"],

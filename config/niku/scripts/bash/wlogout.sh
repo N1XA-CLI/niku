@@ -21,5 +21,6 @@ wlogout \
 -l "$HOME/.config/wlogout/layout" \
 --protocol layer-shell \
 -b 5 \
+-n \
 -T "$T" \
 -B "$B" &

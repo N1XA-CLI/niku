@@ -51,7 +51,7 @@ spotify-adblock-git
 starship
 swaync
 swayosd
-swww
+awww
 thunar
 ttf-jetbrains-mono-nerd
 unzip
@@ -73,3 +73,6 @@ ffmpegthumbnailer
 libinput-tools
 libinput
 hyprlock
+qt5-quickcontrols2
+qt5-graphicaleffects
+qt5-declarative
