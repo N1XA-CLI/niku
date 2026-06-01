@@ -11,8 +11,9 @@ DARK_MODE="dark"
 if [[ $CURRENT_MODE == "dark" ]]; then
   rm "$MODE_DIR"/* &
     ln -sf "$LIGHT_MODE" "$MODE_DIR" &
-      notify_color_update
-        "$HOME/.config/niku/scripts/bash/matugen.sh"
+      gsettings set org.gnome.desktop.interface gtk-theme "$LIGHT_MODE"
+        notify_color_update
+          "$HOME/.config/niku/scripts/bash/matugen.sh"
 
 elif [[ $CURRENT_MODE == "both" ]]; then
   rm "$MODE_DIR"/* &
@@ -23,12 +24,14 @@ elif [[ $CURRENT_MODE == "both" ]]; then
 elif [[ $CURRENT_MODE == "light" ]]; then 
   rm "$MODE_DIR"/* &
     ln -sf "$DARK_MODE" "$MODE_DIR" &
-      notify_color_mode_update
-        "$HOME/.config/niku/scripts/bash/matugen.sh"
+      gsettings set org.gnome.desktop.interface gtk-theme "$DARK_MODE"
+        notify_color_mode_update
+          "$HOME/.config/niku/scripts/bash/matugen.sh"
 
 else
    notify-send "No Color mode found!" "Going with dark" 
   ln -sf "$DARK_MODE" "$MODE_DIR" &
-    notify_color_mode_update
-      "$HOME/.config/niku/scripts/bash/matugen.sh"
+    gsettings set org.gnome.desktop.interface gtk-theme "$DARK_MODE"
+      notify_color_mode_update
+        "$HOME/.config/niku/scripts/bash/matugen.sh"
  fi
