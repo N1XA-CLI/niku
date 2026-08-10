@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ~/.config/niku/scripts/bash/functions.sh 
+source ~/.config/niku/scripts/bash/functions.sh
 
 MODE_DIR="$HOME/.config/niku/Color-Generator/command/current_command/mode"
 CURRENT_MODE=$(ls "$MODE_DIR")
@@ -10,28 +10,28 @@ DARK_MODE="dark"
 
 if [[ $CURRENT_MODE == "dark" ]]; then
   rm "$MODE_DIR"/* &
-    ln -sf "$LIGHT_MODE" "$MODE_DIR" &
-      gsettings set org.gnome.desktop.interface gtk-theme "$LIGHT_MODE"
-        notify_color_update
-          "$HOME/.config/niku/scripts/bash/matugen.sh"
+  ln -sf "$LIGHT_MODE" "$MODE_DIR" &
+  gsettings set org.gnome.desktop.interface gtk-theme "$LIGHT_MODE"
+  notify_color_mode_update
+  "$HOME/.config/niku/scripts/bash/matugen.sh"
 
 elif [[ $CURRENT_MODE == "both" ]]; then
   rm "$MODE_DIR"/* &
-    ln -sf "$LIGHT_MODE" "$MODE_DIR" &
-      notify_color_mode_update
-        "$HOME/.config/niku/scripts/bash/matugen.sh"
+  ln -sf "$LIGHT_MODE" "$MODE_DIR" &
+  notify_color_mode_update
+  "$HOME/.config/niku/scripts/bash/matugen.sh"
 
-elif [[ $CURRENT_MODE == "light" ]]; then 
+elif [[ $CURRENT_MODE == "light" ]]; then
   rm "$MODE_DIR"/* &
-    ln -sf "$DARK_MODE" "$MODE_DIR" &
-      gsettings set org.gnome.desktop.interface gtk-theme "$DARK_MODE"
-        notify_color_mode_update
-          "$HOME/.config/niku/scripts/bash/matugen.sh"
+  ln -sf "$DARK_MODE" "$MODE_DIR" &
+  gsettings set org.gnome.desktop.interface gtk-theme "$DARK_MODE"
+  notify_color_mode_update
+  "$HOME/.config/niku/scripts/bash/matugen.sh"
 
 else
-   notify-send "No Color mode found!" "Going with dark" 
+  notify-send "No Color mode selected!" "Going with dark"
   ln -sf "$DARK_MODE" "$MODE_DIR" &
-    gsettings set org.gnome.desktop.interface gtk-theme "$DARK_MODE"
-      notify_color_mode_update
-        "$HOME/.config/niku/scripts/bash/matugen.sh"
- fi
+  gsettings set org.gnome.desktop.interface gtk-theme "$DARK_MODE"
+  notify_color_mode_update
+  "$HOME/.config/niku/scripts/bash/matugen.sh"
+fi

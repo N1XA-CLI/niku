@@ -1,3 +1,0 @@
-[visualizer]
-color_rgba = "{{colors.primary.default.rgba | set_alpha: 0.7}}"
-color2_rgba = "{{colors.secondary.default.rgba | set_alpha: 0.7}}"

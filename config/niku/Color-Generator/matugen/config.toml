@@ -35,19 +35,11 @@ output_path = '~/.config/cava/config'
 post_hook = "pkill -USR1 cava"
 
 
-[templates.kwybar]
-input_path = '~/.config/niku/Color-Generator/matugen/templates/kwybars-colors.toml'
-output_path = '~/.config/kwybars/colors.toml'
-
-
 [templates.kitty]
 input_path = '~/.config/niku/Color-Generator/matugen/templates/terminal/kitty-colors.conf'
 output_path = '~/.config/kitty/colors.conf'
 post_hook = 'pkill -USR1 kitty'
 
-[templates.swaylock]
-input_path = '~/.config/niku/Color-Generator/matugen/templates/swaylock'
-output_path = '~/.config/swaylock/config'
 
 [templates.gtk3]
 input_path = '~/.config/niku/Color-Generator/matugen/templates/gtk3.css'
@@ -66,12 +58,12 @@ input_path = '~/.config/niku/Color-Generator/matugen/templates/yazi-colors.toml'
 output_path = '~/.config/yazi/flavors/niku.toml'
 
 
-[templates.spicetify]
-input_path = '~/.config/niku/Color-Generator/matugen/templates/spicetify.ini'
-output_path = '~/.config/spicetify/Themes/niku/color.ini'
+# [templates.spicetify]
+# input_path = '~/.config/niku/Color-Generator/matugen/templates/spicetify.ini'
+# output_path = '~/.config/spicetify/Themes/niku/color.ini'
 # post_hook = 'spicetify apply'
 
 
-# [templates.obs-studio]
-# input_path = '~/.config/niku/Color-Generator/matugen/templates/obs-studio'
-# output_path = '~/.config/obs-studio/themes/niku.'
+[templates.obs-studio]
+input_path = '~/.config/niku/Color-Generator/matugen/templates/obs-studio.obt'
+output_path = '~/.config/obs-studio/themes/niku.obt'
