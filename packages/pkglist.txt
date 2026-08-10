@@ -6,7 +6,6 @@ btop
 cava
 cliphist
 eza
-fastfetch
 ffmpeg
 fish
 fzf
@@ -15,7 +14,6 @@ hyprpicker
 imagemagick
 jq
 kitty
-kvantum
 libappindicator
 libnotify
 libpulse
@@ -37,20 +35,13 @@ pipewire-alsa
 pipewire-jack
 pipewire-pulse
 pulsemixer
-python-lxml
-python-pillow
 python-scipy
 rofi
 rofi-emoji
-rq
 rsync
 sddm
-spicetify-cli
-spotify
-spotify-adblock-git
 starship
 swaync
-swayosd
 awww
 thunar
 ttf-jetbrains-mono-nerd
@@ -64,8 +55,6 @@ yazi
 zoxide
 wlsunset
 wl-clipboard
-mpc
-mpd
 nm-connection-editor
 brave-bin
 tumbler
@@ -73,6 +62,4 @@ ffmpegthumbnailer
 libinput-tools
 libinput
 hyprlock
-qt5-quickcontrols2
-qt5-graphicaleffects
 qt5-declarative
