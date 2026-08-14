@@ -161,7 +161,7 @@ window-rule {
     match app-id="obsidian"
     match app-id="obs-studio"
     match app-id="rofi"
-    opacity 0.85
+    opacity 0.90
 }
 window-rule {
     geometry-corner-radius 10
