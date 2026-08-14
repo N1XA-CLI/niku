@@ -175,7 +175,6 @@ hotkey-overlay {
 spawn-sh-at-startup     "wl-paste --type text --watch cliphist store"
 spawn-sh-at-startup     "wl-paste --type image --watch cliphist store"
 spawn-sh-at-startup     "wl-clip-persist --clipboard regular"
-spawn-sh-at-startup     "wl-clip-persist --clipboard primary"
 spawn-sh-at-startup     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &"
 spawn-at-startup        "wlsunset"
 spawn-at-startup        "awww-daemon"
