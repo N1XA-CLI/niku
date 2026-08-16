@@ -17,7 +17,9 @@
 **Niku** is a minimal yet powerful **[Niri](https://github.com/niri-wm/niri) rice** for **Arch Linux**, focused on clarity, aesthetics, and real-world usability.
 
 ---
+
 <p align="center">
+  <a href="#support">Support</a> •
   <a href="#assets">Assets</a> •
   <a href="#videos">Videos</a> •
   <a href="#installation">Installation</a> •
@@ -25,6 +27,13 @@
   <a href="#customize">Customize</a> •
   <a href="#credits">Credits</a>
 </p>
+
+---
+
+---
+
+## Support
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P2QOBH1)
 
 ---
 
@@ -242,4 +251,3 @@ Mod + Shift + S       # System Launcher (Quick access to features)
 - [***Aadritobasu***](https://github.com/aadritobasu/) for configs.
 - [***Noctalia***](https://github.com/noctalia-dev) for Color Scheme and mode generator
 ---
-
