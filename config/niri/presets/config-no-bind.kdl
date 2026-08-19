@@ -179,7 +179,7 @@ spawn-sh-at-startup     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent
 spawn-at-startup        "wlsunset"
 spawn-at-startup        "awww-daemon"
 spawn-at-startup        "waybar"
-spawn-at-startup        "swaync"
+// spawn-at-startup        "swaync" // Well I'm disabling it cause I don't have notification and 'Mod + N' automatically starts it.
 spawn-at-startup        "playerctld"
 
 
