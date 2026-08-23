@@ -3,4 +3,4 @@
 SETUVAR __fish_initialized:4300
 SETUVAR fish_greeting:
 SETUVAR fish_key_bindings:fish_vi_key_bindings
-SETUVAR fish_user_paths:/home/levi/\x2espicetify
+SETUVAR fish_user_paths:/home/levi/\x2eopencode/bin\x1e/home/levi/\x2espicetify
