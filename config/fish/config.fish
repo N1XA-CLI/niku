@@ -206,6 +206,3 @@ set -gx PATH $CARGO_HOME/bin $PATH
 zoxide init fish | source
 
 fish_add_path /home/levi/.spicetify
-
-# opencode
-fish_add_path /home/levi/.opencode/bin
