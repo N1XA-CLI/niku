@@ -67,3 +67,7 @@ output_path = '~/.config/yazi/flavors/niku.toml'
 [templates.obs-studio]
 input_path = '~/.config/niku/Color-Generator/matugen/templates/obs-studio.obt'
 output_path = '~/.config/obs-studio/themes/niku.obt'
+
+[templates.zathurarc]
+input_path = '~/.config/niku/Color-Generator/matugen/templates/zathurarc'
+output_path = '~/.config/zathura/zathurarc'

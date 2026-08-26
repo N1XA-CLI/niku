@@ -161,7 +161,7 @@ window-rule {
     match app-id="obsidian"
     match app-id="obs-studio"
     match app-id="rofi"
-    opacity 0.85
+    opacity 0.90
 }
 window-rule {
     geometry-corner-radius 10
@@ -179,12 +179,11 @@ hotkey-overlay {
 spawn-sh-at-startup     "wl-paste --type text --watch cliphist store"
 spawn-sh-at-startup     "wl-paste --type image --watch cliphist store"
 spawn-sh-at-startup     "wl-clip-persist --clipboard regular"
-spawn-sh-at-startup     "wl-clip-persist --clipboard primary"
 spawn-sh-at-startup     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &"
 spawn-at-startup        "wlsunset"
 spawn-at-startup        "awww-daemon"
 spawn-at-startup        "waybar"
-spawn-at-startup        "swaync"
+// spawn-at-startup        "swaync" // Well I'm disabling it cause I don't have notification and 'Mod + N' automatically starts it.
 spawn-at-startup        "playerctld"
 
 
